@@ -13,9 +13,9 @@ CHARACTER CREATION:
     - Losing Programmer (1, 1, 1) on level up (+0, +0, +0)
 
 BACKPACK:
--Can only hold one of each artefact.
+-Can only hold one of each artefact type.
 -Artefacts are obtained randomly from battle.
--Artefacts are:
+-Artefacts types:
     - Weapon (ATK boost)
     - Armour (DEF boost)
     - Helm (HP boost)

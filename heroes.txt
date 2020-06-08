@@ -1,5 +1,16 @@
-Bradleigh Big_Swordfish_Tank 1 0 null null null 0 true 2 5 10
-Marchall Big_Villain_Arsenal 1 0 null null null 0 true 5 2 10
-Ameen Healthy_Lt_Gabriel_Cash_Coder 1 0 null null null 0 true 3 3 14
-Ismael Losing_Programmer 1 0 null null null 0 true 1 1 1
-Peter Losing_Programmer 1 0 null null null 0 false 1 1 1
+Bradleigh,Big Swordfish Tank,9,12547,null,Legendary Blue Onesie,Enchanted Green Wig,48,true,10,61,34,1201
+Marchall,Big Villain Arsenal,2,0,Legendary Blue Rock,null,null,2,true,47,3,11,5
+Ameen,Healthy Lt Gabriel Cash Coder,3,0,null,null,Legendary Blue Beanie,0,true,5,5,58,35
+Ismael,Losing Programmer,4,0,null,null,null,0,true,1,1,1,41
+Peter,Losing Programmer,1,0,null,null,null,0,false,1,1,1,12
+Yes,Losing Programmer,6,0,null,null,null,6,true,1,1,1,613
+Test,Big Villain Arsenal,1,0,null,null,null,1,true,5,2,10,41
+greg,Healthy Lt Gabriel Cash Coder,2,1550,null,null,null,2,true,4,4,16,61
+John,Healthy Lt Gabriel Cash Coder,1,0,null,null,null,2,false,3,3,14,23
+WWW,Big Villain Arsenal,5,9700,Heroic Yellow Paper,null,null,20,true,25,6,14,131
+InventoryTest,Big Villain Arsenal,7,18550,Enchanted Green Scissors,Enchanted Green Shirt,Damaged Orange Wig,13,true,41,24,22,1190
+hero,Old Aries Lickable Cat,3,1350,null,null,null,1,true,12,12,36,78
+Might Guy,Big Swordfish Tank,1,0,null,null,null,1,false,2,5,10,13
+Might Dai,Big Villain Arsenal,1,600,null,null,Heroic Yellow Bandanna,1,true,5,2,28,41
+JBHVGBJN,Big Villain Arsenal,2,100,null,null,null,5,false,7,3,11,83
+HERRR,Big Villain Arsenal,2,1000,null,null,null,1,true,7,3,11,85

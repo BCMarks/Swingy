@@ -9,6 +9,7 @@ public class Hero {
     private Backpack hero_backpack;
     private int game_wins;
     private boolean alive;
+    private int location;
 
     public Hero(String name, String job) {
         this.alive = true;
@@ -17,84 +18,65 @@ public class Hero {
         this.hero_class = job;
         this.hero_level = 1;
         this.hero_xp = 0;
-        this.hero_stats = new Stats(job); // Base stats determined by custom classes
+        this.hero_stats = new Stats(job, 1);
         this.hero_backpack = new Backpack();
+        this.location = 41;
     }
 
-    public Hero(String name, String job, int level, int exp, String weapon, String armour, String helm, int wins, boolean status) {
+    public Hero(String name, String job, int level, int exp, String weapon, String armour, String helm, int wins, boolean status, int location) {
         this.alive = status;
+        this.location = location;
         this.game_wins = wins;
         this.hero_name = name;
         this.hero_class = job;
         this.hero_level = level;
         this.hero_xp = exp;
-        this.hero_stats = new Stats(job); // Base stats determined by custom classes
         this.hero_backpack = new Backpack(weapon, armour, helm);
+        this.hero_stats = new Stats(job, level, this.hero_backpack.getBackpackStats());
     }
 
-    //public void updateHero(String parameter, String value) {
-    //    switch(parameter)
-    //}
-
-    private void setStats() {
-        Integer atk = this.hero_stats.getStat("attack");
-        Integer def = this.hero_stats.getStat("defense");
-        Integer hp = this.hero_stats.getStat("hp");
-
-        switch(this.hero_class) {
-            case "Big Swordfish Tank":
-                atk += 1;
-                def += 2;
-                hp += 1;
-                break;
-            case "Big Villain Arsenal":
-                atk += 2;
-                def += 1;
-                hp += 1;
-                break;
-            case "Healthy Lt Gabriel Cash Coder":
-                atk += 1;
-                def += 1;
-                hp += 2;
-                break;
-            default:
-                break;
-        }
-        this.hero_stats = new Stats(atk, def, hp);
-    }
-
-    private void setLevel() {
+    private void updateLevel() {
         Double xp_required = this.hero_level * 1000 + Math.pow(this.hero_level - 1, 2) * 450;
         if(this.hero_xp >= xp_required) {
             this.hero_level += 1;
+            System.out.println(hero_name + " is now level "+hero_level+"!");
             this.hero_xp -= xp_required;
-            setStats(); 
+            this.hero_stats = new Stats(hero_class, hero_level, this.hero_backpack.getBackpackStats());
         }
     }
 
-    public void setXP(Integer xp_gain) {
+    public void increaseXP(Integer xp_gain) {
+        System.out.println(xp_gain + " xp gained!");
         this.hero_xp += xp_gain;
-        setLevel();
+        updateLevel();
     }
 
-    public void battle(Boolean fleed) {
-        Double roll = Math.random(); //please refine battle simulation
-        if(fleed)
-            roll -= 0.1; //cowardice penalty
-        if(roll >= 0.5) {
-            setXP(7);
-            //random chance for artefact drop and replacement yay or nay
-        }
-        else 
-            this.alive = false;
+    public void setLevel(int level) {
+        this.hero_level = level;
     }
 
-    public void flee() {
-        Double roll = Math.random();
-        if(roll >= 0.5)
-            System.out.println("success");
-        else 
-            battle(true);
+    public void setXP(int xp) {
+        this.hero_xp = xp;
+    }
+
+    public void setInventory(Backpack backpack) {
+        this.hero_backpack = backpack;
+    }
+
+    public void setStatus(Boolean alive) {
+        this.alive = alive;
+    }
+
+    public void setWins(int wins) {
+        this.game_wins = wins;
+    }
+
+    public void setStats(Stats stats) {
+        this.hero_stats = stats;
+    }
+
+    public void setLocation(int location) {
+        this.location = location;
     }
 
     public String getName() {
@@ -127,5 +109,9 @@ public class Hero {
 
     public Stats getStats() {
         return this.hero_stats;
+    }
+
+    public int getLocation() {
+        return this.location;
     }
 }

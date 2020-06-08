@@ -1,4 +1,4 @@
-package swingy.Models;
+package swingy.Utilities;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,12 +7,15 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Database {
+import swingy.Models.Artefact;
+import swingy.Models.Hero;
+
+public class DatabaseSQL {
     //private static String dbInit = "jdbc:sqlserver://localhost:1433;user=admin;password=admin";
     private static String dbConnection = "jdbc:sqlserver://localhost:1433;databaseName=dbSwingy;user=admin;password=admin";
     private static String dbInit = "jdbc:sqlserver://localhost:1433";
 
-    public Database() {
+    public DatabaseSQL() {
         try {
             //consider using a different database
             Connection con = DriverManager.getConnection(dbInit, "admin", "admin");
@@ -43,7 +46,7 @@ public class Database {
             ResultSet rs = stmt.executeQuery("SELECT * FROM Heroes");
 
             while (rs.next()) {
-                heroes.add(new Hero(rs.getString("HeroName"), rs.getString("HeroClass"), rs.getInt("HeroLevel"), rs.getInt("HeroXP"), rs.getString("Weapon"), rs.getString("Armour"), rs.getString("Helm"), rs.getInt("Wins"), rs.getBoolean("Alive")));
+                heroes.add(new Hero(rs.getString("HeroName"), rs.getString("HeroClass"), rs.getInt("HeroLevel"), rs.getInt("HeroXP"), rs.getString("Weapon"), rs.getString("Armour"), rs.getString("Helm"), rs.getInt("Wins"), rs.getBoolean("Alive"), 0));
             }
         }
         catch (Exception e) {

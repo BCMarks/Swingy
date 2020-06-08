@@ -19,10 +19,8 @@ public class consoleHome implements HomeView {
     };
 
     public void setup() {
-
         String input;
         boolean run = true;
-
         while(run) {
             System.out.println("Input your command and press enter. (\"help\" for command list.)");
             try {
@@ -40,9 +38,29 @@ public class consoleHome implements HomeView {
                     controller.quit();
                 case "create":
                     controller.heroCreate();
+                    run = false;
                     break;
                 case "load":
                     controller.heroLoad();
+                    run = false;
+                    break;
+                case "arena":
+                    // add check to hero if arena unlocked
+                    //if unlocked on any hero
+                    //controller.arena();
+                    //else
+                    System.out.println("The arena has not been opened yet.");
+                    break;
+                case "up,up,down,down,left,right,left,right,b,a":
+                    //if no admin hero
+                    //add overpowered admin to db
+                    //full legendary blue set
+                    //level 1000 OALC
+                    //OALC unlocked
+                    //arena unlocked
+                    System.out.println("ADMIN HAS JOINED THE FRAY!");
+                    //else
+                    //System.out.println("Code has already been activated");
                     break;
                 case "gui":
                     run = false;

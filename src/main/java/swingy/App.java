@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import swingy.Models.*;
+import swingy.Utilities.DatabaseText;
 
 import javax.swing.*;
 
@@ -15,21 +16,14 @@ public class App
 {
     private static JFrame window;
     private static Scanner scanner;
-    private static Database2 db;
+    private static DatabaseText db;
     public static void main( String[] args )
     {
         if (args.length != 1 || (!args[0].toLowerCase().equals("console") && !args[0].toLowerCase().equals("gui"))) {
             System.out.println("Usage: java -jar (console | gui)");
             System.exit(1);
         }
-        //List<Hero> herolist = db.getAllHeroes();
         game(args[0]);
-        //for (Hero hero : herolist) {System.out.println(hero.getName()+" is a level "+hero.getLevel()+" "+hero.getJob());}
-        //Hero hero = new Hero("Ameen", "Healthy Lt Gabriel Cash Coder");
-        //db.insertHero(hero);
-        //hero.updateHero();
-        //System.out.println(hero.getLevel());
-        //db.updateHero(hero);
     }
 
     public static JFrame getFrame() {
@@ -54,9 +48,9 @@ public class App
         return scanner;
     }
 
-    public static Database2 getDatabase() {
+    public static DatabaseText getDatabase() {
         if (db == null) {
-            db = new Database2();
+            db = new DatabaseText();
         }
         return db;
     }

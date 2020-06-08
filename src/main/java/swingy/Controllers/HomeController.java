@@ -11,14 +11,10 @@ public class HomeController {
 
     public void heroCreate() {
         this.view.create();
-        //controller: CreateController
-        //view: CreateView
     }
 
     public void heroLoad() {
         this.view.load();
-        //controller: LoadController
-        //view: LoadView
     }
 
     public void help() {

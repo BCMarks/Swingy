@@ -1,0 +1,196 @@
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,936,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,794,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,96,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,1657,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,649,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,263,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,1136,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,907,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,1862,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,1526,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,1819,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,40,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,1730,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,48,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,1028,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,496,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,542,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,456,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,1085,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,1869,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,207,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,1385,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,1597,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,704,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,1412,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,1221,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,160,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,1648,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,370,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,1792,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,1116,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,1504,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,1050,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,2078,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,588,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,952,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,1811,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,986,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,596,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,901,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,2351,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,61,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,53,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,1018,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,661,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,2385,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,2273,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,1813,true
+Bradleigh,,Ancient Dragon,1,6000,null,null,null,728,true
+WWW,,Ancient Dragon,1,6000,null,Enchanted Green Jacket,null,562,true
+WWW,,Banished Sorceror,1,1300,Damaged Orange Paper,null,null,759,true
+WWW,,Banished Sorceror,1,1300,null,null,Standard Orange Wig,14,true
+WWW,,Ancient Dragon,1,6000,Damaged Red Paper,null,null,230,true
+WWW,,Banished Sorceror,1,1300,Standard Orange Scissors,null,null,724,true
+WWW,,Banished Sorceror,1,1300,null,null,Damaged Orange Bandanna,633,true
+WWW,,Banished Sorceror,1,1300,null,null,null,617,true
+WWW,,Banished Sorceror,1,1300,null,null,null,585,true
+WWW,,Ancient Dragon,1,6000,null,Standard Red Jacket,null,127,true
+WWW,,Ancient Dragon,1,6000,Damaged Orange Paper,null,null,102,true
+WWW,,Banished Sorceror,1,1300,null,null,null,290,true
+WWW,,Banished Sorceror,1,1300,null,null,null,668,true
+WWW,,Ancient Dragon,1,6000,null,null,Standard Orange Wig,784,true
+WWW,,Banished Sorceror,1,1300,null,Legendary Red Onesie,null,728,true
+WWW,,Banished Sorceror,1,1300,null,null,null,146,true
+WWW,,Ancient Dragon,1,6000,Standard Orange Paper,null,null,647,true
+WWW,,Banished Sorceror,1,1300,Heroic Yellow Paper,null,null,780,true
+WWW,,Banished Sorceror,1,1300,null,null,Standard Orange Wig,244,true
+WWW,,Ancient Dragon,1,6000,null,Damaged Red Shirt,null,432,true
+WWW,,Banished Sorceror,1,1300,null,Damaged Orange Shirt,null,209,true
+WWW,,Banished Sorceror,1,1300,null,Standard Red Jacket,null,260,true
+WWW,,Banished Sorceror,1,1300,Damaged Red Paper,null,null,552,true
+WWW,,Banished Sorceror,1,1300,null,null,null,77,true
+WWW,,Ancient Dragon,1,6000,null,null,null,682,true
+WWW,,Banished Sorceror,1,1300,null,null,Heroic Yellow Bandanna,810,true
+WWW,,Banished Sorceror,1,1300,Damaged Orange Paper,null,null,325,true
+WWW,,Banished Sorceror,1,1300,null,null,null,656,true
+WWW,,Banished Sorceror,1,1300,Enchanted Green Paper,null,null,234,true
+WWW,,Banished Sorceror,1,1300,null,Damaged Red Shirt,null,94,true
+greg,,Banished Sorceror,1,1300,null,Heroic Yellow Shirt,null,201,true
+greg,,Skeleton Soldier,1,600,null,Damaged Orange Jacket,null,48,true
+greg,,Ancient Dragon,1,6000,Standard Red Scissors,null,null,189,true
+greg,,Banished Sorceror,1,1300,null,null,Standard Orange Wig,43,true
+greg,,Skeleton Soldier,1,600,Enchanted Green Scissors,null,null,27,true
+greg,,Skeleton Soldier,1,600,Heroic Yellow Rock,null,null,218,true
+greg,,Skeleton Soldier,1,600,null,null,Damaged Orange Beanie,161,true
+greg,,Skeleton Soldier,1,600,null,null,Heroic Yellow Bandanna,30,true
+greg,,Banished Sorceror,1,1300,null,Enchanted Green Shirt,null,181,true
+greg,,Skeleton Soldier,1,600,Standard Red Paper,null,null,148,true
+greg,,Skeleton Soldier,1,600,null,null,Damaged Red Wig,213,true
+greg,,Skeleton Soldier,1,600,null,null,Standard Red Beanie,90,true
+greg,,Skeleton Soldier,1,600,Standard Orange Scissors,null,null,122,true
+greg,,Skeleton Soldier,1,600,null,null,Damaged Red Wig,49,true
+greg,,Ancient Dragon,1,6000,null,null,null,25,true
+InventoryTest,,Banished Sorceror,1,1300,null,Damaged Orange Shirt,null,677,true
+InventoryTest,,Banished Sorceror,1,1300,null,null,null,112,true
+InventoryTest,,Banished Sorceror,1,1300,null,Standard Red Shirt,null,46,true
+InventoryTest,,Banished Sorceror,1,1300,null,null,null,381,true
+InventoryTest,,Ancient Dragon,1,6000,Damaged Red Scissors,null,null,120,true
+InventoryTest,,Banished Sorceror,1,1300,null,null,null,1423,true
+InventoryTest,,Banished Sorceror,1,1300,Standard Orange Paper,null,null,1352,true
+InventoryTest,,Banished Sorceror,1,1300,null,null,null,253,true
+InventoryTest,,Ancient Dragon,1,6000,null,null,null,698,true
+InventoryTest,,Ancient Dragon,1,6000,null,null,Damaged Orange Wig,1471,true
+InventoryTest,,Banished Sorceror,1,1300,null,null,Legendary Red Bandanna,1477,true
+InventoryTest,,Banished Sorceror,1,1300,null,null,Standard Red Wig,1362,true
+InventoryTest,,Banished Sorceror,1,1300,null,null,null,81,true
+InventoryTest,,Ancient Dragon,1,6000,null,Heroic Red Jacket,null,960,true
+InventoryTest,,Banished Sorceror,1,1300,Damaged Orange Paper,null,null,460,true
+InventoryTest,,Banished Sorceror,1,1300,Heroic Yellow Scissors,null,null,1147,true
+InventoryTest,,Banished Sorceror,1,1300,null,null,Standard Red Wig,466,true
+InventoryTest,,Banished Sorceror,1,1300,null,null,Heroic Yellow Wig,339,true
+InventoryTest,,Banished Sorceror,1,1300,Damaged Red Paper,null,null,965,true
+InventoryTest,,Banished Sorceror,1,1300,Legendary Blue Scissors,null,null,647,true
+InventoryTest,,Banished Sorceror,1,1300,null,null,null,247,true
+InventoryTest,,Banished Sorceror,1,1300,null,null,null,1342,true
+InventoryTest,,Ancient Dragon,1,6000,null,null,null,95,true
+InventoryTest,,Banished Sorceror,1,1300,null,Standard Red Jacket,null,706,true
+InventoryTest,,Banished Sorceror,1,1300,null,null,Standard Red Wig,1328,true
+InventoryTest,,Banished Sorceror,1,1300,Damaged Orange Paper,null,null,1425,true
+InventoryTest,,Banished Sorceror,1,1300,Damaged Red Paper,null,null,652,true
+InventoryTest,,Banished Sorceror,1,1300,Standard Orange Scissors,null,null,69,true
+InventoryTest,,Banished Sorceror,1,1300,Standard Red Paper,null,null,1389,true
+InventoryTest,,Ancient Dragon,1,6000,null,null,null,608,true
+InventoryTest,,Ancient Dragon,1,6000,Legendary Blue Paper,null,null,78,true
+InventoryTest,,Banished Sorceror,1,1300,Damaged Orange Scissors,null,null,45,true
+InventoryTest,,Banished Sorceror,1,1300,null,null,Damaged Orange Bandanna,549,true
+InventoryTest,,Banished Sorceror,1,1300,Heroic Yellow Scissors,null,null,1371,true
+InventoryTest,,Banished Sorceror,1,1300,null,null,Standard Orange Beanie,898,true
+InventoryTest,,Banished Sorceror,1,1300,null,null,null,433,true
+InventoryTest,,Ancient Dragon,1,6000,null,null,Damaged Orange Wig,1065,true
+InventoryTest,,Banished Sorceror,1,1300,null,null,null,829,true
+InventoryTest,,Ancient Dragon,1,6000,null,null,Damaged Orange Wig,1190,false
+hero,,Skeleton Soldier,1,600,null,Standard Orange Shirt,null,144,true
+hero,,Skeleton Soldier,1,600,null,null,null,128,true
+hero,,Giant Rat,1,250,null,null,Enchanted Green Beanie,20,false
+hero,,Banished Sorceror,1,1300,null,Standard Red Jacket,null,79,false
+hero,,Skeleton Soldier,1,600,null,null,Enchanted Green Bandanna,12,true
+hero,,Skeleton Soldier,1,600,null,null,Standard Red Bandanna,153,true
+hero,,Skeleton Soldier,1,600,Standard Orange Paper,null,null,152,true
+hero,,Giant Rat,1,250,Damaged Orange Scissors,null,null,213,true
+hero,,Giant Rat,1,250,null,null,null,21,false
+hero,,Skeleton Soldier,1,600,null,Damaged Orange Shirt,null,183,true
+hero,,Giant Rat,1,250,Standard Orange Paper,null,null,120,true
+hero,,Skeleton Soldier,1,600,null,Standard Orange Jacket,null,67,false
+hero,,Giant Rat,1,250,null,Damaged Orange Shirt,null,104,true
+hero,,Banished Sorceror,1,1300,Standard Orange Paper,null,null,75,false
+hero,,Giant Rat,1,250,Damaged Orange Paper,null,null,162,true
+Might Guy,,Banished Sorceror,1,1300,null,null,null,5,true
+Might Guy,,Skeleton Soldier,1,600,null,null,null,23,true
+Might Guy,,Giant Rat,1,250,Heroic Yellow Paper,null,null,70,true
+Might Guy,,Giant Rat,1,250,null,null,null,52,true
+Might Guy,,Banished Sorceror,1,1300,null,null,Damaged Red Wig,4,true
+Might Guy,,Skeleton Soldier,1,600,null,Heroic Red Shirt,null,57,true
+Might Guy,,Skeleton Soldier,1,600,null,null,Standard Red Beanie,15,true
+Might Guy,,Giant Rat,1,250,null,null,null,1,true
+Might Guy,,Giant Rat,1,250,null,null,null,80,true
+Might Dai,,Skeleton Soldier,1,600,null,Enchanted Red Shirt,null,56,true
+Might Dai,,Giant Rat,1,250,null,null,Standard Red Wig,63,true
+Might Dai,,Skeleton Soldier,1,600,null,null,null,11,true
+Might Dai,,Skeleton Soldier,1,600,Damaged Orange Scissors,null,null,58,true
+Might Dai,,Giant Rat,1,250,null,null,null,36,true
+Might Dai,,Skeleton Soldier,1,600,null,Enchanted Green Jacket,null,9,true
+Might Dai,,Giant Rat,1,250,Legendary Red Paper,null,null,17,true
+Might Dai,,Skeleton Soldier,1,600,null,Enchanted Green Jacket,null,76,true
+Might Dai,,Giant Rat,1,250,null,null,Standard Red Wig,12,true
+JBHVGBJN,,Banished Sorceror,1,1300,null,null,null,190,true
+JBHVGBJN,,Banished Sorceror,1,1300,null,null,null,7,true
+JBHVGBJN,,Skeleton Soldier,1,600,null,null,Heroic Yellow Bandanna,24,true
+JBHVGBJN,,Banished Sorceror,1,1300,Damaged Orange Scissors,null,null,107,true
+JBHVGBJN,,Skeleton Soldier,1,600,null,Standard Orange Shirt,null,100,true
+JBHVGBJN,,Skeleton Soldier,1,600,null,null,Standard Red Bandanna,204,true
+JBHVGBJN,,Banished Sorceror,1,1300,null,Damaged Orange Jacket,null,90,true
+JBHVGBJN,,Skeleton Soldier,1,600,null,null,null,40,true
+JBHVGBJN,,Skeleton Soldier,1,600,null,Damaged Red Shirt,null,35,true
+JBHVGBJN,,Ancient Dragon,1,6000,Standard Orange Scissors,null,null,68,true
+JBHVGBJN,,Banished Sorceror,1,1300,Damaged Orange Paper,null,null,97,true
+JBHVGBJN,,Skeleton Soldier,1,600,Damaged Orange Paper,null,null,203,true
+JBHVGBJN,,Skeleton Soldier,1,600,null,null,Standard Red Wig,95,true
+JBHVGBJN,,Banished Sorceror,1,1300,null,null,null,54,true
+JBHVGBJN,,Banished Sorceror,1,1300,null,null,null,143,true
+HERRR,,Ancient Dragon,1,6000,null,null,Enchanted Green Bandanna,49,true
+HERRR,,Giant Rat,1,250,null,null,Standard Red Bandanna,215,true
+HERRR,,Ancient Dragon,1,6000,null,null,null,25,true
+HERRR,,Banished Sorceror,1,1300,Damaged Orange Paper,null,null,75,true
+HERRR,,Giant Rat,1,250,null,null,Damaged Orange Wig,38,true
+HERRR,,Skeleton Soldier,1,600,null,Standard Orange Shirt,null,93,true
+HERRR,,Skeleton Soldier,1,600,Standard Red Scissors,null,null,180,true
+HERRR,,Giant Rat,1,250,null,null,Damaged Red Bandanna,58,true
+HERRR,,Skeleton Soldier,1,600,Enchanted Green Paper,null,null,177,true
+HERRR,,Skeleton Soldier,1,600,Damaged Orange Paper,null,null,76,true
+HERRR,,Skeleton Soldier,1,600,null,null,null,69,true
+HERRR,,Banished Sorceror,1,1300,Standard Orange Paper,null,null,80,true
+HERRR,,Skeleton Soldier,1,600,Damaged Red Scissors,null,null,86,true
+HERRR,,Giant Rat,1,250,null,null,Standard Orange Bandanna,45,true
+HERRR,,Giant Rat,1,250,null,null,Heroic Yellow Wig,146,true
+HERRR,Might Guy,Big Swordfish Tank,1,700,null,null,null,85,false
