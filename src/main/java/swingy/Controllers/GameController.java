@@ -190,5 +190,4 @@ public class GameController {
     public void switchMode() {
         this.view.switchMode();
     }
-
 }

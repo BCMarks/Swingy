@@ -49,7 +49,7 @@ public class consoleHome implements HomeView {
                     break;
                 case "arena":
                     if (db.isArenaUnlocked()) {
-                        //controller.arena();
+                        controller.arena();
                         run = false;
                     } else {
                         System.out.println("The arena has not been opened yet.");
@@ -89,6 +89,10 @@ public class consoleHome implements HomeView {
         }
     }
 
+    public void arena() {
+        new consoleArena().setup();
+    }
+    
     public void help()  {
         System.out.println("Available Commands:\nCreate - Begin a game with a new hero.\nLOAD - Continue with a previously saved hero..\nquit - exit the app.\ngui - switches to gui.\nhelp - what you're seeing right now.");
     }

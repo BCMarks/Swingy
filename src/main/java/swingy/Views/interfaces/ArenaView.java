@@ -1,11 +1,10 @@
 package swingy.Views.interfaces;
 
-public interface HomeView {
+public interface ArenaView {
     public void setup();
+    public void begin();
+    public void home();
     public void help();
     public void switchMode();
-    public void arena();
-    public void create();
-    public void load();
     public void quit();
 }

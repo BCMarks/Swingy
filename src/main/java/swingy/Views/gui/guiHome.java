@@ -95,6 +95,10 @@ public class guiHome extends JPanel implements HomeView{
         new consoleHome().setup();
     }
 
+    public void arena() {
+        //nothing
+    }
+    
     public void create() {
         
                     // window.remove(create);

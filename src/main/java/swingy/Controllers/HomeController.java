@@ -17,6 +17,10 @@ public class HomeController {
         this.view.load();
     }
 
+    public void arena() {
+        this.view.arena();
+    }
+
     public void help() {
         this.view.help();
     }

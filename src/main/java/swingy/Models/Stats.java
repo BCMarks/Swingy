@@ -61,7 +61,27 @@ public class Stats {
     }
 
     public Stats(String job, int level, Stats backpackStats) {
-        switch(job){
+        switch(job) {
+            case "Giant Rat":
+                this.attack = 2;
+                this.defense = 2;
+                this.health = 6;
+                break;
+            case "Skeleton Soldier":
+                this.attack = 4;
+                this.defense = 3;
+                this.health = 10;
+                break;
+            case "Banished Sorceror":
+                this.attack = 10;
+                this.defense = 1;
+                this.health = 8;
+                break;
+            case "Ancient Dragon":
+                this.attack = 40;
+                this.defense = 40;
+                this.health = 100;
+                break;
             case "Big Swordfish Tank":
                 this.attack = 2 + (level - 1);
                 this.defense = 5 + 2 * (level - 1);
