@@ -26,7 +26,7 @@ public class Villain {
         String weapon = "null";
         String armour = "null";
         String helm = "null";
-        Double roll = Math.random();
+        double roll = Math.random();
         if (roll > 0.75) {
             weapon = new Artefact("Weapon").getName();
         } else if (roll > 0.5) {

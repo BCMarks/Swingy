@@ -36,7 +36,7 @@ public class Hero {
     }
 
     private void updateLevel() {
-        Double xp_required = this.hero_level * 1000 + Math.pow(this.hero_level - 1, 2) * 450;
+        double xp_required = this.hero_level * 1000 + Math.pow(this.hero_level - 1, 2) * 450;
         if(this.hero_xp >= xp_required) {
             this.hero_level += 1;
             System.out.println(hero_name + " is now level "+hero_level+"!");

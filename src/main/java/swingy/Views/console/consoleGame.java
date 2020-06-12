@@ -210,7 +210,7 @@ public class consoleGame implements GameView {
     }
 
     public void grantSpoils(Villain villain) {
-        Double roll = Math.random();
+        double roll = Math.random();
         if (roll > 0.66) {
             if (!(villain.getInventory().getArtefactName("Weapon").equals("null"))) {
                 if (hero.getInventory().getArtefactName("Weapon").equals("null")) {

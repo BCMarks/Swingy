@@ -17,8 +17,8 @@ public class GameController {
 
     public GameController(GameView mode) {
         this.view = mode;
-        this.dbv = new DatabaseVillains();
-        this.db = App.getDatabase();
+        dbv = new DatabaseVillains();
+        db = App.getDatabase();
     }
 
     public ArrayList<Villain> generateVillains(Map map, Hero hero) {
@@ -34,7 +34,7 @@ public class GameController {
             return villains;
         }
         Villain baddie;
-        Double roll;
+        double roll;
         for (int i = 0; i < map.getMapSize(); i++) {
             roll = Math.random();
             if (roll > 1 - map.getFloor() * 0.02) {
@@ -110,30 +110,68 @@ public class GameController {
         int villainHealth = villain.getStats().getStat("health");
         int villainAttack = villain.getStats().getStat("attack");
         int villainDefense = villain.getStats().getStat("defense");
-        //add crit hits or min damage of 1 to avoid stalemate
-        //make use of isCOward in villain crit rate
-        while (villain.getStatus() && hero.getStatus()) {
-            if (heroAttack > villainDefense) {
-                villainHealth -= (heroAttack - villainDefense);
-                if (villainHealth <= 0) {
-                    villain.setStatus(false);
-                    dbv.updatevillain(villain);
-                    hero.increaseXP(villain.getXP());
-                    this.view.grantSpoils(villain);
+        if (isCoward) {
+            while (villain.getStatus() && hero.getStatus()) { 
+                heroHealth = villainTurn(hero, villainAttack, heroDefense, heroHealth);
+                if (hero.getStatus()) {
+                    villainHealth = heroTurn(hero, villain, heroAttack, villainDefense, villainHealth);
                 }
             }
-            if (villain.getStatus() && villainAttack > heroDefense) {
-                heroHealth -= (villainAttack - heroDefense);
-                if (heroHealth <= 0) {
-                    hero.setStatus(false);
+        } else {
+            while (villain.getStatus() && hero.getStatus()) {
+                villainHealth = heroTurn(hero, villain, heroAttack, villainDefense, villainHealth);
+                if (villain.getStatus()) {
+                    heroHealth = villainTurn(hero, villainAttack, heroDefense, heroHealth);
                 }
             }
         }
         return hero.getStatus();
     }
 
+    private int heroTurn(Hero hero, Villain villain, int heroAttack, int villainDefense, int villainHealth) {
+        int damage;
+        double critRoll;
+        if (heroAttack > villainDefense) {
+            critRoll = Math.random();
+            if (critRoll >= 0.97) {
+                damage = 2 * heroAttack - villainDefense;
+            } else {
+                damage = heroAttack - villainDefense;
+            }
+        } else {
+            damage = 1;
+        }
+        villainHealth -= damage;
+        if (villainHealth <= 0) {
+            villain.setStatus(false);
+            dbv.updatevillain(villain);
+            hero.increaseXP(villain.getXP());
+            this.view.grantSpoils(villain);
+        }
+        return villainHealth;
+    }
+
+    private int villainTurn(Hero hero, int villainAttack, int heroDefense, int heroHealth) {
+        int damage;
+        if (villainAttack > heroDefense) {
+            double critRoll = Math.random();
+            if (critRoll >= 0.97) {
+                damage = 2 * villainAttack - heroDefense;
+            } else {
+                damage = villainAttack - heroDefense;
+            }
+        } else {
+            damage = 1;
+        }
+        heroHealth -= damage;
+        if (heroHealth <= 0) {
+            hero.setStatus(false);
+        }
+        return heroHealth;
+    }
+
     public boolean flee() {
-        Double roll = Math.random();
+        double roll = Math.random();
         if (roll >= 0.5) {
             return true;
         } else {

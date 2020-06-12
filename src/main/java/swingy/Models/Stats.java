@@ -40,12 +40,12 @@ public class Stats {
             case "Healthy Lt Gabriel Cash Coder":
                 this.attack = 3 + (level - 1);
                 this.defense = 3 + (level - 1);
-                this.health = 14 + 2 * (level - 1);
+                this.health = 21 + 2 * (level - 1);
                 break;
             case "Old Aries Lickable Cat": 
                 this.attack = 11 + (level / 2);
                 this.defense = 11 +  (level / 2);
-                this.health = 35 + (level / 2);
+                this.health = 42 + (level / 2);
                 break;
             default:
                 this.attack = 1;
@@ -75,12 +75,12 @@ public class Stats {
             case "Healthy Lt Gabriel Cash Coder":
                 this.attack = 3 + (level - 1);
                 this.defense = 3 + (level - 1);
-                this.health = 14 + 2 * (level - 1);
+                this.health = 21 + 2 * (level - 1);
                 break;
             case "Old Aries Lickable Cat": 
                 this.attack = 11 + (level / 2);
                 this.defense = 11 +  (level / 2);
-                this.health = 35 + (level / 2);
+                this.health = 42 + (level / 2);
                 break;
             default:
                 this.attack = 1;

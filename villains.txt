@@ -104,7 +104,7 @@ InventoryTest,,Ancient Dragon,1,6000,null,null,Damaged Orange Wig,1471,true
 InventoryTest,,Banished Sorceror,1,1300,null,null,Legendary Red Bandanna,1477,true
 InventoryTest,,Banished Sorceror,1,1300,null,null,Standard Red Wig,1362,true
 InventoryTest,,Banished Sorceror,1,1300,null,null,null,81,true
-InventoryTest,,Ancient Dragon,1,6000,null,Heroic Red Jacket,null,960,true
+InventoryTest,,Ancient Dragon,1,6000,null,Heroic Red Jacket,null,960,false
 InventoryTest,,Banished Sorceror,1,1300,Damaged Orange Paper,null,null,460,true
 InventoryTest,,Banished Sorceror,1,1300,Heroic Yellow Scissors,null,null,1147,true
 InventoryTest,,Banished Sorceror,1,1300,null,null,Standard Red Wig,466,true
@@ -194,3 +194,12 @@ HERRR,,Skeleton Soldier,1,600,Damaged Red Scissors,null,null,86,true
 HERRR,,Giant Rat,1,250,null,null,Standard Orange Bandanna,45,true
 HERRR,,Giant Rat,1,250,null,null,Heroic Yellow Wig,146,true
 HERRR,Might Guy,Big Swordfish Tank,1,700,null,null,null,85,false
+newbattle,,Giant Rat,1,250,Standard Orange Scissors,null,null,77,true
+newbattle,,Giant Rat,1,250,null,null,null,75,true
+newbattle,,Banished Sorceror,1,1300,Enchanted Green Paper,null,null,59,true
+newbattle,,Giant Rat,1,250,null,null,null,46,false
+newbattle,,Giant Rat,1,250,Standard Orange Scissors,null,null,22,true
+newbattle,,Giant Rat,1,250,null,Damaged Orange Shirt,null,51,true
+newbattle,,Giant Rat,1,250,null,null,null,10,false
+newbattle,,Giant Rat,1,250,null,Heroic Yellow Shirt,null,17,true
+newbattle,,Skeleton Soldier,1,600,Damaged Red Paper,null,null,50,true
