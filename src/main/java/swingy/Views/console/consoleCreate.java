@@ -23,17 +23,18 @@ public class consoleCreate implements CreateView {
     };
 
     public void setup() {
-        //Add Old Aries Lickable Cat
         String[] jobs = {"Big Swordfish Tank", "Big Villain Arsenal", "Healthy Lt Gabriel Cash Coder", "Losing Programmer", "Old Aries Lickable Cat"};
         Stats[] baseStats = {new Stats(jobs[0], 1), new Stats(jobs[1], 1), new Stats(jobs[2], 1), new Stats(jobs[3], 1), new Stats(jobs[4], 1)};
         String name = "";
         String job = "";
         Integer i = 0;
-        int classCount;
-        //if O.A.L.C. unlocked
-        // classCount = 5;
-        //else {}
-        classCount = 4;
+        int classCount = 4;
+        for (Hero hero : db.getAllHeroes()) {
+            if (hero.isOALCUnlocked()) {
+                classCount = 5;
+                break;
+            }
+        }
         try {
             System.out.println("What is your name, hero?");
             while(name.length() < 3 || name.length() > 20) {
@@ -47,10 +48,10 @@ public class consoleCreate implements CreateView {
             System.out.println("Option\tClass\t\t\t\tAttack\tDefense\tHit Points");
             System.out.println("1\t"+jobs[0]+"\t\t2\t5\t10");
             System.out.println("2\t"+jobs[1]+"\t\t5\t2\t10");
-            System.out.println("3\t"+jobs[2]+"\t3\t3\t14");
+            System.out.println("3\t"+jobs[2]+"\t3\t3\t21");
             System.out.println("4\t"+jobs[3]+"\t\t1\t1\t1");
             if (classCount == 5) {
-                System.out.println("5\t"+jobs[4]+"\t\t10\t10\t34");
+                System.out.println("5\t"+jobs[4]+"\t\t11\t11\t42");
             }
             while(i == 0) {
                 try {

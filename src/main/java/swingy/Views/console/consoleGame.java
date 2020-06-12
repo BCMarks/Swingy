@@ -218,8 +218,106 @@ public class consoleGame implements GameView {
         } else {
             doArtefactDrop(villain, "Helm", "health");
         }
+        if (villain.getJob().equals("Ancient Dragon")) {
+            dragonBalls();
+        }
         hero.setStats(new Stats(hero.getJob(), hero.getLevel(), hero.getInventory().getBackpackStats()));
         db.updateHero(hero);
+    }
+
+    private void dragonBalls() {
+        System.out.println("The defeated dragon has acknowledged your skill.");
+        System.out.println("It shall grant you one of the following wishes:");
+        System.out.println("1: Access to the Arena.");
+        System.out.println("2: The power of a new class shall be unlocked.");
+        System.out.println("3: A fallen hero shall be granted life.");
+        System.out.println("4: An increase in your own power.");
+        boolean awaitingDecision = true;
+        String input;
+        ArrayList<Hero> allHeroes = db.getAllHeroes();
+        ArrayList<Hero> deadHeroes = new ArrayList<Hero>();
+        boolean arenaUnlocked = false;
+        boolean jobUnlocked = false;
+        for (Hero establishedHero : allHeroes) {
+            if (!establishedHero.getStatus()) {
+                deadHeroes.add(establishedHero);
+            }
+            if (establishedHero.isArenaUnlocked() && !arenaUnlocked) {
+                arenaUnlocked = true;
+            }
+            if (establishedHero.isOALCUnlocked() && !jobUnlocked) {
+                jobUnlocked = true;
+            }
+        }
+        while (awaitingDecision) {
+            try {
+                input = scanner.nextLine().toLowerCase();
+            }
+            catch (Exception e) {
+                input = "";
+                quit();
+            }
+            switch(input) {
+                case "1":
+                    if (arenaUnlocked) {
+                        System.out.println("Access to the Arena has already been granted to all.");
+                    } else {
+                        System.out.println("The Arena is now open!");
+                        hero.activateArena();
+                        awaitingDecision = false;
+                    }
+                    break;
+                case "2":
+                    if (jobUnlocked) {
+                        System.out.println("The power of the Old Aries Lickable Cat has already been unlocked.");
+                    } else {
+                        System.out.println("The strength of the Old Aries Lickable Cat has been unlocked!");
+                        hero.activateOALC();
+                        awaitingDecision = false;
+                    }
+                    break;
+                case "3":
+                    if (deadHeroes.size() == 0) {
+                        System.out.println("There are no heroes that need reviving.");
+                    } else {
+                        revivalMenu(deadHeroes);
+                        awaitingDecision = false;
+                    }
+                    break;
+                case "4":
+                    hero.increaseXP(3000);
+                    awaitingDecision = false;
+                    break;
+                default:
+                    System.out.println("Select a valid wish.");
+            }
+        } 
+    }
+
+    private void revivalMenu(ArrayList<Hero> deadHeroes) {
+        System.out.println("Choose the one to be revived.");
+        int i = 1;
+        for (Hero hero : deadHeroes) {
+            System.out.println(i+": "+hero.getName());
+            i++;
+        }
+        int deadCount = deadHeroes.size();
+        i = 0;
+        while(i == 0) {
+            try {
+                i = Integer.parseInt(scanner.nextLine());
+                if(i < 1 || i > deadCount) {
+                    i = 0;
+                    System.out.println("Invalid selection.");
+                }
+            } catch (Exception e) {
+                System.out.println("Invalid selection.");
+            }
+        }
+        Hero luckyGuy = deadHeroes.get(i - 1);
+        luckyGuy.setStatus(true);
+        db.updateHero(luckyGuy);
+        System.out.println(luckyGuy.getName()+" has been revived!");
     }
 
     private void doArtefactDrop(Villain villain, String type, String stat) {

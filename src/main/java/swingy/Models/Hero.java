@@ -10,6 +10,8 @@ public class Hero {
     private int game_wins;
     private boolean alive;
     private int location;
+    private boolean unlockedArena;
+    private boolean unlockedOALC;
 
     public Hero(String name, String job) {
         this.alive = true;
@@ -21,9 +23,11 @@ public class Hero {
         this.hero_stats = new Stats(job, 1);
         this.hero_backpack = new Backpack();
         this.location = 41;
+        this.unlockedArena = false;
+        this.unlockedOALC = false;
     }
 
-    public Hero(String name, String job, int level, int exp, String weapon, String armour, String helm, int wins, boolean status, int location) {
+    public Hero(String name, String job, int level, int exp, String weapon, String armour, String helm, int wins, boolean status, int location, boolean arenaUnlocked, boolean jobUnlocked) {
         this.alive = status;
         this.location = location;
         this.game_wins = wins;
@@ -33,6 +37,8 @@ public class Hero {
         this.hero_xp = exp;
         this.hero_backpack = new Backpack(weapon, armour, helm);
         this.hero_stats = new Stats(job, level, this.hero_backpack.getBackpackStats());
+        this.unlockedArena = arenaUnlocked;
+        this.unlockedOALC = jobUnlocked;
     }
 
     private void updateLevel() {
@@ -77,6 +83,22 @@ public class Hero {
 
     public void setLocation(int location) {
         this.location = location;
+    }
+
+    public void activateArena() {
+        this.unlockedArena = true;
+    }
+
+    public boolean isArenaUnlocked() {
+        return this.unlockedArena;
+    }
+
+    public void activateOALC() {
+        this.unlockedOALC = true;
+    }
+
+    public boolean isOALCUnlocked() {
+        return this.unlockedOALC;
     }
 
     public String getName() {

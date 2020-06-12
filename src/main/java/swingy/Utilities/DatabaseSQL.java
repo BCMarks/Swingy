@@ -46,7 +46,7 @@ public class DatabaseSQL {
             ResultSet rs = stmt.executeQuery("SELECT * FROM Heroes");
 
             while (rs.next()) {
-                heroes.add(new Hero(rs.getString("HeroName"), rs.getString("HeroClass"), rs.getInt("HeroLevel"), rs.getInt("HeroXP"), rs.getString("Weapon"), rs.getString("Armour"), rs.getString("Helm"), rs.getInt("Wins"), rs.getBoolean("Alive"), 0));
+                heroes.add(new Hero(rs.getString("HeroName"), rs.getString("HeroClass"), rs.getInt("HeroLevel"), rs.getInt("HeroXP"), rs.getString("Weapon"), rs.getString("Armour"), rs.getString("Helm"), rs.getInt("Wins"), rs.getBoolean("Alive"), 0, true, true));
             }
         }
         catch (Exception e) {
