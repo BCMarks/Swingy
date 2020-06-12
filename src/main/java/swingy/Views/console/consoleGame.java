@@ -212,140 +212,60 @@ public class consoleGame implements GameView {
     public void grantSpoils(Villain villain) {
         double roll = Math.random();
         if (roll > 0.66) {
-            if (!(villain.getInventory().getArtefactName("Weapon").equals("null"))) {
-                if (hero.getInventory().getArtefactName("Weapon").equals("null")) {
-                    hero.getInventory()
-                        .acceptArtefact(
-                            "Weapon",
-                            villain.getInventory().getArtefactName("Weapon")
-                    );
-                    System.out.println("Obtained "+hero.getInventory().getArtefactName("Weapon"));
-                } else {
-                    boolean awaitingDecision = true;
-                    String input;
-                    while (awaitingDecision) {
-                        System.out.println("Replace "+hero.getInventory().getArtefactName("Weapon")+" (+"+hero.getInventory().getBackpackStats().getStat("attack")+") with "+villain.getInventory().getArtefactName("Weapon")+" (+"+villain.getInventory().getBackpackStats().getStat("attack")+")? (Y/N)");
-                        try {
-                            input = scanner.nextLine().toLowerCase();
-                        }
-                        catch (Exception e) {
-                            input = "";
-                            quit();
-                        }
-                        switch(input) {
-                            case "y":
-                            case "yes":
-                                System.out.println("Discarded "+hero.getInventory().getArtefactName("Weapon"));
-                                hero.getInventory()
-                                .acceptArtefact(
-                                    "Weapon",
-                                    villain.getInventory().getArtefactName("Weapon")
-                                );
-                                System.out.println("Obtained "+hero.getInventory().getArtefactName("Weapon"));
-                                awaitingDecision = false;
-                                break;
-                            case "n":
-                            case "no":
-                                awaitingDecision = false;
-                                break;
-                            default:
-                                System.out.println("baka");
-                                break;
-                        }
-                    }
-                }
-            }
+            doArtefactDrop(villain, "Weapon", "attack");
         } else if (roll > 0.33) {
-            if (!(villain.getInventory().getArtefactName("Armour").equals("null"))) {
-                if (hero.getInventory().getArtefactName("Armour").equals("null")) {
-                    hero.getInventory()
-                        .acceptArtefact(
-                            "Armour",
-                            villain.getInventory().getArtefactName("Armour")
-                    );
-                    System.out.println("Obtained "+hero.getInventory().getArtefactName("Armour"));
-                } else {
-                    boolean awaitingDecision = true;
-                    String input;
-                    while (awaitingDecision) {
-                        System.out.println("Replace "+hero.getInventory().getArtefactName("Armour")+" (+"+hero.getInventory().getBackpackStats().getStat("defense")+") with "+villain.getInventory().getArtefactName("Armour")+" (+"+villain.getInventory().getBackpackStats().getStat("defense")+")? (Y/N)");
-                        try {
-                            input = scanner.nextLine().toLowerCase();
-                        }
-                        catch (Exception e) {
-                            input = "";
-                            quit();
-                        }
-                        switch(input) {
-                            case "y":
-                            case "yes":
-                                System.out.println("Discarded "+hero.getInventory().getArtefactName("Armour"));
-                                hero.getInventory()
-                                .acceptArtefact(
-                                    "Armour",
-                                    villain.getInventory().getArtefactName("Armour")
-                                );
-                                System.out.println("Obtained "+hero.getInventory().getArtefactName("Armour"));
-                                awaitingDecision = false;
-                                break;
-                            case "n":
-                            case "no":
-                                awaitingDecision = false;
-                                break;
-                            default:
-                                System.out.println("baka");
-                                break;
-                        }
-                    }
-                }
-            }
+            doArtefactDrop(villain, "Armour", "defense");
         } else {
-            if (!(villain.getInventory().getArtefactName("Helm").equals("null"))) {
-                if (hero.getInventory().getArtefactName("Helm").equals("null")) {
-                    hero.getInventory()
-                        .acceptArtefact(
-                            "Helm",
-                            villain.getInventory().getArtefactName("Helm")
-                    );
-                    System.out.println("Obtained "+hero.getInventory().getArtefactName("Helm"));
-                } else {
-                    boolean awaitingDecision = true;
-                    String input;
-                    while (awaitingDecision) {
-                        System.out.println("Replace "+hero.getInventory().getArtefactName("Helm")+" (+"+hero.getInventory().getBackpackStats().getStat("health")+") with "+villain.getInventory().getArtefactName("Helm")+" (+"+villain.getInventory().getBackpackStats().getStat("health")+")? (Y/N)");
-                        try {
-                            input = scanner.nextLine().toLowerCase();
-                        }
-                        catch (Exception e) {
-                            input = "";
-                            quit();
-                        }
-                        switch(input) {
-                            case "y":
-                            case "yes":
-                                System.out.println("Discarded "+hero.getInventory().getArtefactName("Helm"));
-                                hero.getInventory()
-                                .acceptArtefact(
-                                    "Helm",
-                                    villain.getInventory().getArtefactName("Helm")
-                                );
-                                System.out.println("Obtained "+hero.getInventory().getArtefactName("Helm"));
-                                awaitingDecision = false;
-                                break;
-                            case "n":
-                            case "no":
-                                awaitingDecision = false;
-                                break;
-                            default:
-                                System.out.println("baka");
-                                break;
-                        }
+            doArtefactDrop(villain, "Helm", "health");
+        }
+        hero.setStats(new Stats(hero.getJob(), hero.getLevel(), hero.getInventory().getBackpackStats()));
+        db.updateHero(hero);
+    }
+
+    private void doArtefactDrop(Villain villain, String type, String stat) {
+        if (!(villain.getInventory().getArtefactName(type).equals("null"))) {
+            if (hero.getInventory().getArtefactName(type).equals("null")) {
+                hero.getInventory()
+                    .acceptArtefact(
+                        type,
+                        villain.getInventory().getArtefactName(type)
+                );
+                System.out.println("Obtained "+hero.getInventory().getArtefactName(type));
+            } else {
+                boolean awaitingDecision = true;
+                String input;
+                while (awaitingDecision) {
+                    System.out.println("Replace "+hero.getInventory().getArtefactName(type)+" (+"+hero.getInventory().getBackpackStats().getStat(stat)+") with "+villain.getInventory().getArtefactName(type)+" (+"+villain.getInventory().getBackpackStats().getStat(stat)+")? (Y/N)");
+                    try {
+                        input = scanner.nextLine().toLowerCase();
+                    }
+                    catch (Exception e) {
+                        input = "";
+                        quit();
+                    }
+                    switch(input) {
+                        case "y":
+                        case "yes":
+                            System.out.println("Discarded "+hero.getInventory().getArtefactName(type));
+                            hero.getInventory()
+                            .acceptArtefact(
+                                type,
+                                villain.getInventory().getArtefactName(type)
+                            );
+                            System.out.println("Obtained "+hero.getInventory().getArtefactName(type));
+                            awaitingDecision = false;
+                            break;
+                        case "n":
+                        case "no":
+                            awaitingDecision = false;
+                            break;
+                        default:
+                            System.out.println("baka");
+                            break;
                     }
                 }
             }
         }
-        hero.setStats(new Stats(hero.getJob(), hero.getLevel(), hero.getInventory().getBackpackStats()));
-        db.updateHero(hero);
     }
 
     public void help()  {

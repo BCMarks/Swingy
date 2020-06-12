@@ -11,7 +11,7 @@ WWW,Big Villain Arsenal,5,9700,Heroic Yellow Paper,null,null,20,true,25,6,14,131
 InventoryTest,Big Villain Arsenal,8,1350,Enchanted Green Scissors,Enchanted Green Shirt,Enchanted Green Wig,13,true,91,57,65,960
 hero,Old Aries Lickable Cat,3,1350,null,null,null,1,true,12,12,43,78
 Might Guy,Big Swordfish Tank,1,0,null,null,null,1,false,2,5,10,13
-Might Dai,Big Villain Arsenal,1,600,null,null,Heroic Yellow Bandanna,1,true,5,2,28,41
+Might Dai,Big Villain Arsenal,2,1750,null,Damaged Orange Shirt,Heroic Yellow Bandanna,2,true,7,9,29,15
 JBHVGBJN,Big Villain Arsenal,2,100,null,null,null,5,false,7,3,11,83
 HERRR,Big Villain Arsenal,2,1000,null,null,null,1,false,7,3,11,40
 newbattle,Big Swordfish Tank,1,500,null,null,null,0,false,2,5,10,58

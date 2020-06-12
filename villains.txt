@@ -154,15 +154,6 @@ Might Guy,,Skeleton Soldier,1,600,null,Heroic Red Shirt,null,57,true
 Might Guy,,Skeleton Soldier,1,600,null,null,Standard Red Beanie,15,true
 Might Guy,,Giant Rat,1,250,null,null,null,1,true
 Might Guy,,Giant Rat,1,250,null,null,null,80,true
-Might Dai,,Skeleton Soldier,1,600,null,Enchanted Red Shirt,null,56,true
-Might Dai,,Giant Rat,1,250,null,null,Standard Red Wig,63,true
-Might Dai,,Skeleton Soldier,1,600,null,null,null,11,true
-Might Dai,,Skeleton Soldier,1,600,Damaged Orange Scissors,null,null,58,true
-Might Dai,,Giant Rat,1,250,null,null,null,36,true
-Might Dai,,Skeleton Soldier,1,600,null,Enchanted Green Jacket,null,9,true
-Might Dai,,Giant Rat,1,250,Legendary Red Paper,null,null,17,true
-Might Dai,,Skeleton Soldier,1,600,null,Enchanted Green Jacket,null,76,true
-Might Dai,,Giant Rat,1,250,null,null,Standard Red Wig,12,true
 JBHVGBJN,,Banished Sorceror,1,1300,null,null,null,190,true
 JBHVGBJN,,Banished Sorceror,1,1300,null,null,null,7,true
 JBHVGBJN,,Skeleton Soldier,1,600,null,null,Heroic Yellow Bandanna,24,true
@@ -203,3 +194,12 @@ newbattle,,Giant Rat,1,250,null,Damaged Orange Shirt,null,51,true
 newbattle,,Giant Rat,1,250,null,null,null,10,false
 newbattle,,Giant Rat,1,250,null,Heroic Yellow Shirt,null,17,true
 newbattle,,Skeleton Soldier,1,600,Damaged Red Paper,null,null,50,true
+Might Dai,,Banished Sorceror,1,1300,null,null,Standard Orange Wig,51,true
+Might Dai,,Banished Sorceror,1,1300,null,Heroic Yellow Jacket,null,59,true
+Might Dai,,Banished Sorceror,1,1300,null,null,null,65,true
+Might Dai,,Skeleton Soldier,1,600,null,Damaged Orange Shirt,null,21,true
+Might Dai,,Banished Sorceror,1,1300,null,Damaged Orange Shirt,null,15,false
+Might Dai,,Skeleton Soldier,1,600,null,null,Heroic Red Bandanna,28,false
+Might Dai,,Ancient Dragon,1,6000,Standard Red Scissors,null,null,57,true
+Might Dai,,Ancient Dragon,1,6000,Enchanted Green Rock,null,null,67,true
+Might Dai,,Giant Rat,1,250,null,null,Damaged Orange Wig,37,false
