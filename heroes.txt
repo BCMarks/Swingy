@@ -14,5 +14,6 @@ Might Guy,Big Swordfish Tank,1,0,null,null,null,1,false,2,5,10,13,false,false
 Might Dai,Big Villain Arsenal,2,1750,null,Damaged Orange Shirt,Heroic Yellow Bandanna,2,true,7,9,29,15,false,false
 JBHVGBJN,Big Villain Arsenal,2,100,null,null,null,5,false,7,3,11,83,false,false
 HERRR,Big Villain Arsenal,2,1000,null,null,null,1,false,7,3,11,40,false,false
-newbattle,Big Swordfish Tank,1,500,null,null,null,0,false,2,5,10,58,false,false
+newbattle,Big Swordfish Tank,1,500,null,null,null,0,true,2,5,10,58,false,false
 ffgffd,Old Aries Lickable Cat,1,0,null,null,null,0,true,11,11,42,41,false,false
+ADMIN,Old Aries Lickable Cat,1000,6000,Legendary Blue Rock,Legendary Blue Rock,Legendary Blue Rock,51,true,631,631,662,14327039,true,true

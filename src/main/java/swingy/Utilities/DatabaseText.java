@@ -18,6 +18,24 @@ public class DatabaseText {
         return this.heroList;
     }
 
+    public boolean isClassUnlocked() {
+        for (Hero hero : heroList) {
+            if (hero.isOALCUnlocked()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean isArenaUnlocked() {
+        for (Hero hero : heroList) {
+            if (hero.isArenaUnlocked()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public boolean insertHero(Hero hero) {
         boolean isOriginalName = true;
         for (Hero establishedHero : heroList) {

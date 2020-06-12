@@ -3,17 +3,20 @@ package swingy.Views.console;
 import java.util.Scanner;
 
 import swingy.App;
-import swingy.Controllers.CreateController;
 import swingy.Controllers.HomeController;
+import swingy.Models.Hero;
+import swingy.Utilities.DatabaseText;
 import swingy.Views.gui.guiHome;
 import swingy.Views.interfaces.HomeView;
 
 public class consoleHome implements HomeView {
     private static HomeController controller;
+    private static DatabaseText db;
     private static Scanner scanner;
 
     public consoleHome() {
         System.out.println("CONSOLE HOME VIEW\n");
+        db = App.getDatabase();
         controller = new HomeController(this);
         scanner = App.getScanner();
     };
@@ -45,22 +48,35 @@ public class consoleHome implements HomeView {
                     run = false;
                     break;
                 case "arena":
-                    // add check to hero if arena unlocked
-                    //if unlocked on any hero
-                    //controller.arena();
-                    //else
-                    System.out.println("The arena has not been opened yet.");
+                    if (db.isArenaUnlocked()) {
+                        //controller.arena();
+                        run = false;
+                    } else {
+                        System.out.println("The arena has not been opened yet.");
+                    }
                     break;
                 case "up,up,down,down,left,right,left,right,b,a":
-                    //if no admin hero
-                    //add overpowered admin to db
-                    //full legendary blue set
-                    //level 1000 OALC
-                    //OALC unlocked
-                    //arena unlocked
-                    System.out.println("ADMIN HAS JOINED THE FRAY!");
-                    //else
-                    //System.out.println("Code has already been activated");
+                    if (db.insertHero(
+                            new Hero(
+                                "ADMIN",
+                                "Old Aries Lickable Cat",
+                                1000,
+                                0,
+                                "Legendary Blue Rock",
+                                "Legendary Blue Rock",
+                                "Legendary Blue Rock",
+                                50,
+                                true,
+                                1,
+                                true,
+                                true
+                            )
+                        )
+                    ) {
+                        System.out.println("ADMIN HAS JOINED THE FRAY!");
+                    } else {
+                        System.out.println("Code has already been activated");
+                    }
                     break;
                 case "gui":
                     run = false;

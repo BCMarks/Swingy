@@ -29,11 +29,8 @@ public class consoleCreate implements CreateView {
         String job = "";
         Integer i = 0;
         int classCount = 4;
-        for (Hero hero : db.getAllHeroes()) {
-            if (hero.isOALCUnlocked()) {
-                classCount = 5;
-                break;
-            }
+        if (db.isClassUnlocked()) {
+            classCount = 5;
         }
         try {
             System.out.println("What is your name, hero?");

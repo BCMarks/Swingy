@@ -236,17 +236,11 @@ public class consoleGame implements GameView {
         String input;
         ArrayList<Hero> allHeroes = db.getAllHeroes();
         ArrayList<Hero> deadHeroes = new ArrayList<Hero>();
-        boolean arenaUnlocked = false;
-        boolean jobUnlocked = false;
+        boolean arenaUnlocked = db.isArenaUnlocked();
+        boolean jobUnlocked = db.isClassUnlocked();
         for (Hero establishedHero : allHeroes) {
             if (!establishedHero.getStatus()) {
                 deadHeroes.add(establishedHero);
-            }
-            if (establishedHero.isArenaUnlocked() && !arenaUnlocked) {
-                arenaUnlocked = true;
-            }
-            if (establishedHero.isOALCUnlocked() && !jobUnlocked) {
-                jobUnlocked = true;
             }
         }
         while (awaitingDecision) {
