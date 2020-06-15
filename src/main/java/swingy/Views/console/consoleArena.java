@@ -90,25 +90,24 @@ public class consoleArena implements ArenaView {
                     System.out.println("Invalid selection.");
                 }
             }
-            boolean didPlayerOneWin;
-            if (playerOne < 5) {
-                if (playerTwo < 5) {
-                    didPlayerOneWin = controller.fight(null, null, selectVillain(playerOne), selectVillain(playerTwo));
+            int playerOneWins = 0;
+            for (int i = 0; i < 100; i++) {
+                if (playerOne < 5) {
+                    if (playerTwo < 5) {
+                        playerOneWins += controller.fight(null, null, selectVillain(playerOne), selectVillain(playerTwo));
+                    } else {
+                        playerOneWins += controller.fight(null, db.getAllHeroes().get(playerTwo - 5), selectVillain(playerOne), null);
+                    }
                 } else {
-                    didPlayerOneWin = controller.fight(null, db.getAllHeroes().get(playerTwo - 5), selectVillain(playerOne), null);
-                }
-            } else {
-                if (playerTwo < 5) {
-                    didPlayerOneWin = controller.fight(db.getAllHeroes().get(playerOne - 5), null, null, selectVillain(playerTwo));
-                } else {
-                    didPlayerOneWin = controller.fight(db.getAllHeroes().get(playerOne - 5), db.getAllHeroes().get(playerTwo - 5), null, null);
+                    if (playerTwo < 5) {
+                        playerOneWins += controller.fight(db.getAllHeroes().get(playerOne - 5), null, null, selectVillain(playerTwo));
+                    } else {
+                        playerOneWins += controller.fight(db.getAllHeroes().get(playerOne - 5), db.getAllHeroes().get(playerTwo - 5), null, null);
+                    }
                 }
             }
-            if (didPlayerOneWin) {
-                System.out.println("The Attacker Won!");
-            } else {
-                System.out.println("The Defender Won!");
-            }
+            
+            System.out.println("The Attacker wins "+playerOneWins+"% of the time.");
 
             System.out.println("Simulate another battle? Y/N");
             try {

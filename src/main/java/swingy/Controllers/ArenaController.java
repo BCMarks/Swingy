@@ -19,7 +19,7 @@ public class ArenaController {
         this.view.begin();
     }
 
-    public boolean fight(Hero heroOne, Hero heroTwo, Villain villainOne, Villain villainTwo) {
+    public int fight(Hero heroOne, Hero heroTwo, Villain villainOne, Villain villainTwo) {
         int oneHealth;
         int oneAttack;
         int oneDefense;
@@ -54,9 +54,9 @@ public class ArenaController {
             }
         }
         if (twoHealth > 0) {
-            return false;
+            return 0;
         } else {
-            return true;
+            return 1;
         }
     }
 
