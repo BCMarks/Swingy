@@ -34,12 +34,20 @@ public class consoleCreate implements CreateView {
         }
         try {
             System.out.println("What is your name, hero?");
-            while(name.length() < 3 || name.length() > 20) {
+            while (!controller.isValidHeroName(name)) {
                 name = scanner.nextLine();
-                if(name.length() < 3 )
+                if (name.length() < 3 ) {
                     System.out.println("A small name for a small hero. Make it longer!");
-                else if (name.length() > 20)
+                } else if (name.length() > 20) {
                     System.out.println("Trying to overcompensate for something? Pick a shorter name.");
+                } else if (name.toLowerCase().equals("admin")) {
+                    System.out.println("That name is reserved. Pick a different one.");
+                } else if (controller.nameExists(name)) {
+                    System.out.println("A hero by that name is already registered.");
+                }
+                if (!name.matches("^[a-zA-Z0-9]*$")) {
+                    System.out.println("A valid hero name may only contain alphanumeric characters.");
+                }
             }
             System.out.println("Choose one of the following classes. [1-"+classCount+"]");
             System.out.println("Option\tClass\t\t\t\tAttack\tDefense\tHit Points");
@@ -50,7 +58,7 @@ public class consoleCreate implements CreateView {
             if (classCount == 5) {
                 System.out.println("5\t"+jobs[4]+"\t\t11\t11\t42");
             }
-            while(i == 0) {
+            while (i == 0) {
                 try {
                     i = Integer.parseInt(scanner.nextLine());
                     if(i < 1 || i > classCount) {
@@ -68,7 +76,7 @@ public class consoleCreate implements CreateView {
         }
         String input;
         boolean run = true;
-        while(run) {
+        while (run) {
             System.out.println("====================================");
             System.out.println("Name: " + name);
             System.out.println("Class: " + job);
@@ -86,21 +94,17 @@ public class consoleCreate implements CreateView {
                 input = "";
                 quit();
             }
-            switch(input.toLowerCase()) {
+            switch (input.toLowerCase()) {
                 case "help":
                     controller.help();
                     break;
                 case "quit":
+                    run = false;
                     controller.quit();
                 case "confirm":
                     this.hero = new Hero(name, job);
-                    if (!name.toLowerCase().equals("admin") && db.insertHero(hero)) {
-                        run = false;
-                        controller.confirm();
-                    } else {
-                        System.out.println("A hero by that name is already registered.");
-                        controller.cancel();
-                    }
+                    run = false;
+                    controller.confirm();
                     break;
                 case "cancel":
                     run =  false;
