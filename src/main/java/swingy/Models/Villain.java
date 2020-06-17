@@ -1,14 +1,27 @@
 package swingy.Models;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class Villain {
+    @Size(min = 2, max = 20)
     private String rival_hero;
+    @NotNull
     private String villain_name;
+    @NotNull
     private String villain_class;
+    @Min(1)
     private int villain_level;
+    @Min(1)
     private int villain_xp;
+    @NotNull
     private Stats villain_stats;
+    @NotNull
     private Backpack villain_backpack;
+    @NotNull
     private boolean undead;
+    @Min(1)
     private int location;
 
     public Villain(String job, Hero hero) {

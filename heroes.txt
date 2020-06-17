@@ -8,7 +8,7 @@ Test,Big Villain Arsenal,1,0,null,null,null,1,true,5,2,10,41,false,false
 greg,Healthy Lt Gabriel Cash Coder,2,1550,null,null,null,2,true,4,4,23,61,false,false
 John,Healthy Lt Gabriel Cash Coder,1,0,null,null,null,2,false,3,3,21,23,false,false
 WWW,Big Villain Arsenal,5,9700,Heroic Yellow Paper,null,null,20,true,25,6,14,131,false,false
-InventoryTest,Big Villain Arsenal,8,28350,Enchanted Green Scissors,Enchanted Green Shirt,Enchanted Green Wig,14,true,91,57,65,559,true,true
+InventoryTest,Big Villain Arsenal,9,7300,Enchanted Green Scissors,Enchanted Green Shirt,Enchanted Green Wig,16,true,93,58,66,293,true,true
 hero,Old Aries Lickable Cat,3,1350,null,null,null,1,true,12,12,43,78,false,false
 Might Guy,Big Swordfish Tank,1,0,null,null,null,1,false,2,5,10,13,false,false
 Might Dai,Big Villain Arsenal,2,1750,null,Damaged Orange Shirt,Heroic Yellow Bandanna,2,true,7,9,29,15,false,false
@@ -16,4 +16,5 @@ JBHVGBJN,Big Villain Arsenal,2,100,null,null,null,5,false,7,3,11,83,false,false
 HERRR,Big Villain Arsenal,2,1000,null,null,null,1,false,7,3,11,40,false,false
 newbattle,Big Swordfish Tank,1,500,null,null,null,0,true,2,5,10,58,false,false
 ffgffd,Old Aries Lickable Cat,1,0,null,null,null,0,true,11,11,42,41,false,false
-ADMIN,Old Aries Lickable Cat,1000,6000,Legendary Blue Rock,Legendary Blue Rock,Legendary Blue Rock,51,true,631,631,662,14327039,true,true
+ADMIN,Old Aries Lickable Cat,1000,6000,Legendary Blue Rock,Legendary Blue Rock,Legendary Blue Rock,51,true,631,631,662,13381094,true,true
+Kevin,Old Aries Lickable Cat,1,250,null,null,null,1,true,11,11,42,41,false,false

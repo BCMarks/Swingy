@@ -1,8 +1,13 @@
 package swingy.Models;
 
+import javax.validation.constraints.Min;
+
 public class Stats {
+    @Min(1)
     private int attack;
+    @Min(1)
     private int defense;
+    @Min(1)
     private int health;
 
     public Stats(String job, int level) {

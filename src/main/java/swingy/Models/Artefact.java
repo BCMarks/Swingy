@@ -1,13 +1,22 @@
 package swingy.Models;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+
 import swingy.Resources.Artefact.*;
 
 public class Artefact {
+    @NotEmpty
     private String type;
+    @NotEmpty
     private String name;
+    @NotEmpty
     private String condition;
+    @NotEmpty
     private String colour;
+    @NotEmpty
     private String piece;
+    @Min(4)
     private int value;
 
     public Artefact(String type) {

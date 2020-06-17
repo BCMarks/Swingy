@@ -1,16 +1,32 @@
 package swingy.Models;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class Hero {
+    @Size(min = 2, max = 20)
     private String hero_name;
+    @NotEmpty
     private String hero_class;
+    @Min(1)
     private int hero_level;
+    @NotNull
     private int hero_xp;
+    @NotNull
     private Stats hero_stats;
+    @NotNull
     private Backpack hero_backpack;
+    @NotNull
     private int game_wins;
+    @NotNull
     private boolean alive;
+    @NotNull
     private int location;
+    @NotNull
     private boolean unlockedArena;
+    @NotNull
     private boolean unlockedOALC;
 
     public Hero(String name, String job) {

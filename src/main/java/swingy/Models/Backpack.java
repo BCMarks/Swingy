@@ -3,8 +3,12 @@ package swingy.Models;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.validation.constraints.NotNull;
+
 public class Backpack {
+    @NotNull
     private List<Artefact> inventory;
+    @NotNull
     private Stats backpackStats;
 
     public Backpack()  {

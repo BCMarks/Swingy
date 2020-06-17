@@ -1,7 +1,6 @@
 package swingy.Views.console;
 
 import java.util.Scanner;
-
 import swingy.App;
 import swingy.Controllers.ArenaController;
 import swingy.Models.Hero;

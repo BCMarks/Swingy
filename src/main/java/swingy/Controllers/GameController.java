@@ -60,8 +60,10 @@ public class GameController {
                 while (isOccupied(villains, map, potentialLocation)) {
                     potentialLocation = (int)((Math.random() * (map.getTileCount() - 1)) + 1);
                 }
-                baddie = new Villain(antihero.getName(),
-                    antihero.getJob(), antihero.getLevel(),
+                baddie = new Villain(
+                    antihero.getName(),
+                    antihero.getJob(),
+                    antihero.getLevel(),
                     antihero.getInventory().getArtefactName("Weapon"),
                     antihero.getInventory().getArtefactName("Armour"),
                     antihero.getInventory().getArtefactName("Helm"),

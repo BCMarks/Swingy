@@ -3,10 +3,7 @@ package swingy.Utilities;
 import java.io.File;
 import java.io.FileWriter;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
-
-import swingy.Models.Artefact;
 import swingy.Models.Hero;
 import swingy.Models.Villain;
 

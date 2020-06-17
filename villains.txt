@@ -164,51 +164,6 @@ Might Dai,,Skeleton Soldier,1,600,null,null,Heroic Red Bandanna,28,false
 Might Dai,,Ancient Dragon,1,6000,Standard Red Scissors,null,null,57,true
 Might Dai,,Ancient Dragon,1,6000,Enchanted Green Rock,null,null,67,true
 Might Dai,,Giant Rat,1,250,null,null,Damaged Orange Wig,37,false
-InventoryTest,,Banished Sorceror,1,1300,null,null,Enchanted Red Bandanna,181,true
-InventoryTest,,Banished Sorceror,1,1300,null,Damaged Red Shirt,null,656,true
-InventoryTest,,Banished Sorceror,1,1300,null,Damaged Red Shirt,null,427,true
-InventoryTest,,Banished Sorceror,1,1300,null,Legendary Blue Jacket,null,1935,true
-InventoryTest,,Banished Sorceror,1,1300,null,Standard Orange Shirt,null,1475,true
-InventoryTest,,Banished Sorceror,1,1300,null,null,null,1933,true
-InventoryTest,,Banished Sorceror,1,1300,Damaged Red Paper,null,null,1396,true
-InventoryTest,,Banished Sorceror,1,1300,null,null,Enchanted Green Bandanna,1880,true
-InventoryTest,,Banished Sorceror,1,1300,null,null,null,1440,true
-InventoryTest,,Banished Sorceror,1,1300,null,Heroic Red Jacket,null,229,true
-InventoryTest,,Ancient Dragon,1,6000,null,Enchanted Green Shirt,null,956,false
-InventoryTest,,Ancient Dragon,1,6000,null,Standard Orange Shirt,null,559,false
-InventoryTest,,Ancient Dragon,1,6000,Damaged Orange Paper,null,null,968,false
-InventoryTest,,Banished Sorceror,1,1300,Heroic Red Paper,null,null,1972,true
-InventoryTest,,Banished Sorceror,1,1300,null,null,Enchanted Green Bandanna,85,true
-InventoryTest,,Banished Sorceror,1,1300,Damaged Orange Paper,null,null,1756,true
-InventoryTest,,Ancient Dragon,1,6000,Heroic Red Paper,null,null,130,true
-InventoryTest,,Banished Sorceror,1,1300,null,Damaged Red Shirt,null,1689,true
-InventoryTest,,Banished Sorceror,1,1300,null,null,null,9,true
-InventoryTest,,Banished Sorceror,1,1300,null,Standard Orange Jacket,null,901,true
-InventoryTest,,Banished Sorceror,1,1300,null,null,null,681,true
-InventoryTest,,Banished Sorceror,1,1300,null,Damaged Orange Jacket,null,122,true
-InventoryTest,,Banished Sorceror,1,1300,null,Heroic Yellow Jacket,null,1498,true
-InventoryTest,,Ancient Dragon,1,6000,null,null,Enchanted Green Wig,25,true
-InventoryTest,,Banished Sorceror,1,1300,null,Standard Orange Shirt,null,1831,true
-InventoryTest,,Ancient Dragon,1,6000,null,null,null,1890,true
-InventoryTest,,Banished Sorceror,1,1300,Enchanted Green Paper,null,null,1609,true
-InventoryTest,,Banished Sorceror,1,1300,Legendary Blue Paper,null,null,446,true
-InventoryTest,,Ancient Dragon,1,6000,null,Damaged Orange Shirt,null,650,true
-InventoryTest,,Banished Sorceror,1,1300,null,null,null,2002,true
-InventoryTest,,Banished Sorceror,1,1300,null,Heroic Yellow Shirt,null,1074,true
-InventoryTest,,Banished Sorceror,1,1300,null,null,Damaged Orange Bandanna,864,true
-InventoryTest,,Banished Sorceror,1,1300,null,Damaged Red Shirt,null,803,true
-InventoryTest,,Banished Sorceror,1,1300,null,null,null,1002,true
-InventoryTest,,Banished Sorceror,1,1300,null,null,null,568,true
-InventoryTest,,Ancient Dragon,1,6000,null,null,Standard Orange Wig,638,true
-InventoryTest,,Ancient Dragon,1,6000,null,Standard Orange Jacket,null,1491,true
-InventoryTest,,Banished Sorceror,1,1300,null,Standard Red Shirt,null,356,true
-InventoryTest,,Ancient Dragon,1,6000,null,null,null,361,true
-InventoryTest,,Banished Sorceror,1,1300,null,null,null,1377,true
-InventoryTest,,Banished Sorceror,1,1300,Damaged Orange Scissors,null,null,1164,true
-InventoryTest,,Banished Sorceror,1,1300,null,null,null,1638,true
-InventoryTest,,Banished Sorceror,1,1300,Standard Orange Scissors,null,null,1737,true
-InventoryTest,,Banished Sorceror,1,1300,Damaged Orange Paper,null,null,78,true
-InventoryTest,,Banished Sorceror,1,1300,Standard Red Scissors,null,null,311,true
 ffgffd,,Giant Rat,1,250,Standard Orange Paper,null,null,47,true
 ffgffd,,Skeleton Soldier,1,600,null,Heroic Yellow Shirt,null,75,true
 ffgffd,,Skeleton Soldier,1,600,null,Standard Orange Shirt,null,29,true
@@ -5224,3 +5179,68 @@ ADMIN,,Ancient Dragon,1,6000,Standard Red Paper,null,null,18002623,true
 ADMIN,,Ancient Dragon,1,6000,null,null,null,20328357,true
 ADMIN,,Ancient Dragon,1,6000,null,Heroic Red Shirt,null,23086365,true
 ADMIN,,Ancient Dragon,1,6000,null,null,null,14861416,true
+InventoryTest,,Banished Sorceror,1,1300,null,null,Standard Orange Bandanna,1450,true
+InventoryTest,,Banished Sorceror,1,1300,null,Heroic Yellow Shirt,null,6,true
+InventoryTest,,Banished Sorceror,1,1300,null,null,Damaged Red Wig,857,true
+InventoryTest,,Ancient Dragon,1,6000,null,Heroic Yellow Shirt,null,1598,true
+InventoryTest,,Ancient Dragon,1,6000,null,null,Enchanted Green Beanie,939,true
+InventoryTest,,Ancient Dragon,1,6000,null,null,null,620,true
+InventoryTest,,Banished Sorceror,1,1300,null,Damaged Red Jacket,null,940,true
+InventoryTest,,Banished Sorceror,1,1300,null,null,Enchanted Green Beanie,641,true
+InventoryTest,,Ancient Dragon,1,6000,null,null,null,1449,true
+InventoryTest,,Banished Sorceror,1,1300,null,null,null,1493,true
+InventoryTest,,Ancient Dragon,1,6000,null,null,null,205,true
+InventoryTest,,Banished Sorceror,1,1300,null,null,Enchanted Red Bandanna,352,true
+InventoryTest,,Banished Sorceror,1,1300,null,Standard Orange Shirt,null,1534,true
+InventoryTest,,Ancient Dragon,1,6000,null,null,Enchanted Green Wig,1781,true
+InventoryTest,,Banished Sorceror,1,1300,Standard Orange Paper,null,null,993,true
+InventoryTest,,Banished Sorceror,1,1300,null,null,Damaged Orange Wig,130,true
+InventoryTest,,Banished Sorceror,1,1300,Heroic Red Paper,null,null,345,true
+InventoryTest,,Ancient Dragon,1,6000,Standard Red Paper,null,null,196,true
+InventoryTest,,Banished Sorceror,1,1300,null,Damaged Orange Jacket,null,621,true
+InventoryTest,,Ancient Dragon,1,6000,Damaged Orange Scissors,null,null,48,true
+InventoryTest,,Banished Sorceror,1,1300,null,null,Damaged Orange Wig,200,true
+InventoryTest,,Ancient Dragon,1,6000,Damaged Red Rock,null,null,1014,true
+InventoryTest,,Banished Sorceror,1,1300,null,Damaged Orange Shirt,null,186,true
+InventoryTest,,Ancient Dragon,1,6000,Damaged Red Paper,null,null,1412,true
+InventoryTest,,Banished Sorceror,1,1300,null,null,Heroic Red Wig,1999,true
+InventoryTest,,Banished Sorceror,1,1300,null,null,Standard Red Wig,110,true
+InventoryTest,,Banished Sorceror,1,1300,null,Damaged Orange Shirt,null,670,true
+InventoryTest,,Ancient Dragon,1,6000,null,Heroic Yellow Shirt,null,293,false
+InventoryTest,,Banished Sorceror,1,1300,null,null,Legendary Blue Bandanna,1295,true
+InventoryTest,,Ancient Dragon,1,6000,Standard Orange Scissors,null,null,782,true
+InventoryTest,,Banished Sorceror,1,1300,null,null,null,1466,true
+InventoryTest,,Banished Sorceror,1,1300,null,null,Damaged Orange Beanie,1015,true
+InventoryTest,,Banished Sorceror,1,1300,null,Legendary Red Onesie,null,103,true
+InventoryTest,,Banished Sorceror,1,1300,Enchanted Red Paper,null,null,1952,true
+InventoryTest,,Ancient Dragon,1,6000,null,null,Heroic Yellow Wig,1430,true
+InventoryTest,,Banished Sorceror,1,1300,null,Damaged Red Shirt,null,879,true
+InventoryTest,,Banished Sorceror,1,1300,null,Standard Orange Shirt,null,135,true
+InventoryTest,,Banished Sorceror,1,1300,null,null,null,1541,true
+InventoryTest,,Banished Sorceror,1,1300,Standard Red Scissors,null,null,310,true
+InventoryTest,,Banished Sorceror,1,1300,null,null,null,449,true
+InventoryTest,,Banished Sorceror,1,1300,null,null,Damaged Red Wig,1587,true
+InventoryTest,,Banished Sorceror,1,1300,null,null,null,1198,true
+InventoryTest,,Ancient Dragon,1,6000,null,null,Standard Red Wig,710,true
+InventoryTest,,Banished Sorceror,1,1300,null,null,Enchanted Red Wig,1888,true
+InventoryTest,,Banished Sorceror,1,1300,null,null,null,711,true
+Kevin,,Banished Sorceror,1,1300,Enchanted Red Scissors,null,null,58,true
+Kevin,,Giant Rat,1,250,null,Heroic Red Shirt,null,54,true
+Kevin,,Giant Rat,1,250,null,null,null,75,true
+Kevin,,Skeleton Soldier,1,600,Standard Red Scissors,null,null,61,true
+Kevin,,Banished Sorceror,1,1300,null,null,Damaged Orange Wig,51,true
+Kevin,,Skeleton Soldier,1,600,null,Damaged Red Shirt,null,11,true
+Kevin,,Skeleton Soldier,1,600,Legendary Blue Paper,null,null,8,true
+Kevin,,Skeleton Soldier,1,600,null,Damaged Orange Jacket,null,76,true
+Kevin,,Skeleton Soldier,1,600,Damaged Red Rock,null,null,73,true
+Kevin,HERRR,Big Villain Arsenal,2,1400,null,null,null,23,true
+KevinKevinKevinKevinKevinKevinKevinKevinKevinKevin,,Giant Rat,1,250,null,Standard Orange Shirt,null,19,true
+KevinKevinKevinKevinKevinKevinKevinKevinKevinKevin,,Skeleton Soldier,1,600,Damaged Orange Scissors,null,null,31,true
+KevinKevinKevinKevinKevinKevinKevinKevinKevinKevin,,Giant Rat,1,250,Damaged Orange Paper,null,null,71,true
+KevinKevinKevinKevinKevinKevinKevinKevinKevinKevin,,Skeleton Soldier,1,600,Standard Red Paper,null,null,63,true
+KevinKevinKevinKevinKevinKevinKevinKevinKevinKevin,,Giant Rat,1,250,null,Enchanted Red Shirt,null,79,true
+KevinKevinKevinKevinKevinKevinKevinKevinKevinKevin,,Skeleton Soldier,1,600,null,null,Damaged Orange Bandanna,35,true
+KevinKevinKevinKevinKevinKevinKevinKevinKevinKevin,,Giant Rat,1,250,null,null,null,64,true
+KevinKevinKevinKevinKevinKevinKevinKevinKevinKevin,,Skeleton Soldier,1,600,null,null,Heroic Red Bandanna,13,true
+KevinKevinKevinKevinKevinKevinKevinKevinKevinKevin,,Skeleton Soldier,1,600,null,null,null,49,true
+KevinKevinKevinKevinKevinKevinKevinKevinKevinKevin,Might Guy,Big Swordfish Tank,1,700,null,null,null,69,true

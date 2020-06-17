@@ -1,14 +1,8 @@
 package swingy;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
-
-import swingy.Models.*;
 import swingy.Utilities.DatabaseText;
-
 import javax.swing.*;
-
 import swingy.Views.console.consoleHome;
 import swingy.Views.gui.guiHome;
 
@@ -17,7 +11,7 @@ public class App
     private static JFrame window;
     private static Scanner scanner;
     private static DatabaseText db;
-    public static void main( String[] args )
+    public static void main(String[] args)
     {
         if (args.length != 1 || (!args[0].toLowerCase().equals("console") && !args[0].toLowerCase().equals("gui"))) {
             System.out.println("Usage: java -jar (console | gui)");

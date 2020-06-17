@@ -34,7 +34,6 @@ public class consoleGame implements GameView {
         while (run) {
             Map map = new Map(hero);
             ArrayList<Villain> villains = controller.generateVillains(map, hero);
-            map.mapDetails();
             boolean activeFloor = true;
             if (resetHeroLocation) {
                 hero.setLocation(map.getMapCenter());
