@@ -7,6 +7,7 @@ import swingy.Controllers.CreateController;
 import swingy.Models.Hero;
 import swingy.Models.Stats;
 import swingy.Utilities.DatabaseText;
+import swingy.Views.gui.guiCreate;
 import swingy.Views.interfaces.CreateView;
 
 public class consoleCreate implements CreateView {
@@ -127,11 +128,11 @@ public class consoleCreate implements CreateView {
     }
 
     public void switchMode() {
-        //new guiCreate().setup();
-        System.out.println("switched");
+        new guiCreate().setup();
     }
 
     public void confirm() {
+        db.insertHero(hero);
         new consoleGame().setup(hero);
     }
 

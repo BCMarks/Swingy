@@ -10,17 +10,22 @@ import javax.swing.JPanel;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.*;
 
 import swingy.App;
 import swingy.Controllers.HomeController;
+import swingy.Utilities.DatabaseText;
 import swingy.Views.console.consoleHome;
 import swingy.Views.interfaces.HomeView;
 
 public class guiHome extends JPanel implements HomeView{
     private static JFrame window;
     private static HomeController controller;
+    private static DatabaseText db;
+    
     private JButton create = new JButton("NEW HERO");
     private JButton load = new JButton("LOAD HERO");
+    private JButton arena = new JButton("ARENA");
     private JMenu menu = new JMenu("MENU");
     private JMenuBar menuBar = new JMenuBar();
     private JMenuItem mode = new JMenuItem("Switch to console");
@@ -29,6 +34,7 @@ public class guiHome extends JPanel implements HomeView{
 
     public guiHome() {
         controller = new HomeController(this);
+        db = App.getDatabase();
         if(window == null)
             window = App.getFrame();
         window.setVisible(true);
@@ -44,6 +50,12 @@ public class guiHome extends JPanel implements HomeView{
         load.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 controller.heroLoad();
+            }
+        });
+
+        arena.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                controller.arena();
             }
         });
 
@@ -65,17 +77,30 @@ public class guiHome extends JPanel implements HomeView{
             }
         });
 
+        this.setLayout(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridwidth = GridBagConstraints.REMAINDER;
+        //gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.insets = new Insets(50, 50, 50, 50);
+
         this.menu.add(mode);
         this.menu.add(help);
         this.menu.add(quit);
         this.menuBar.add(menu);
 
-        //set size of this panel
-        create.setBounds(200, 200, 100, 50);
-        load.setBounds(200, 300, 100, 50);
+        Dimension buttonSize = new Dimension(200, 100);
+        create.setPreferredSize(buttonSize);
+        load.setPreferredSize(buttonSize);
+        arena.setPreferredSize(buttonSize);
+        create.setMinimumSize(buttonSize);
+        load.setMinimumSize(buttonSize);
+        arena.setMinimumSize(buttonSize);
 
-        this.add(create);
-        this.add(load);
+        this.add(create, gbc);
+        this.add(load, gbc);
+        if (db.isArenaUnlocked()) {
+            this.add(arena, gbc);
+        }
         this.setVisible(true);
         window.setContentPane(this);
         window.setJMenuBar(menuBar);
@@ -96,18 +121,30 @@ public class guiHome extends JPanel implements HomeView{
     }
 
     public void arena() {
-        //nothing
+        clearWindow();
+        //new guiArena().setup();
     }
     
     public void create() {
-        
-                    // window.remove(create);
-                    // window.remove(load);
-                    // guiCharacterCreation.setup();
+        clearWindow();
+        new guiCreate().setup();
     }
 
     public void load() {
+        clearWindow();
+        //new guiLoad().setup();
+    }
 
+    private void clearWindow() {
+        menuBar.remove(menu);
+        menuBar.revalidate();
+        menuBar.repaint();
+        window.remove(create);
+        window.remove(load);
+        if (db.isArenaUnlocked()) {
+            window.remove(arena);
+        }
+        window.repaint();
     }
 
     public void quit() {
