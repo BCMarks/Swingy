@@ -72,7 +72,7 @@ public class guiCreate extends JPanel implements CreateView {
 
         mode.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
-                controller.switchMode();
+                controller.switchMode(heroName.getText(), heroJob.getSelectedIndex());
             }
         });
 
@@ -107,7 +107,9 @@ public class guiCreate extends JPanel implements CreateView {
         jobs[2]+"\t   3\t   3\t  21\n"+
         jobs[3]+"\t   1\t   1\t   1");
 
-        heroJob.setSelectedIndex(0);
+        if (heroJob.getSelectedIndex() == -1) {
+            heroJob.setSelectedIndex(0);
+        }
         if (!db.isClassUnlocked()) {
             heroJob.removeItemAt(4);
         } else {
@@ -133,6 +135,12 @@ public class guiCreate extends JPanel implements CreateView {
         window.revalidate();
     }
 
+    public void setup(String name, int job) {
+        heroName.setText(name);
+        heroJob.setSelectedIndex(job);
+        setup();
+    }
+
     //Do proper help later
     public void help()  {
         String message = "THIS IS THE HELP VIEW";
@@ -140,10 +148,10 @@ public class guiCreate extends JPanel implements CreateView {
         JOptionPane.showMessageDialog(window, message, "Help", JOptionPane.INFORMATION_MESSAGE);
     }
 
-    public void switchMode() {
+    public void switchMode(String name, int job) {
         if (window != null)
             window.setVisible(false);
-        new consoleCreate().setup();
+        new consoleCreate().setup(name, job);
     }
 
     public void confirm() {

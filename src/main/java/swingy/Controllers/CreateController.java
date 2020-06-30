@@ -30,8 +30,8 @@ public class CreateController {
         this.view.quit();
     }
 
-    public void switchMode() {
-        this.view.switchMode();
+    public void switchMode(String name, int job) {
+        this.view.switchMode(name, job);
     }
 
     public boolean isValidHeroName(String name) {

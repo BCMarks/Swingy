@@ -250,7 +250,7 @@ public class consoleGame implements GameView {
                 input = "";
                 quit();
             }
-            switch(input) {
+            switch (input) {
                 case "1":
                     if (arenaUnlocked) {
                         System.out.println("Access to the Arena has already been granted to all.");

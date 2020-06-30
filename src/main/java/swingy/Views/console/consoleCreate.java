@@ -15,6 +15,9 @@ public class consoleCreate implements CreateView {
     private static Scanner scanner;
     private static DatabaseText db;
     private Hero hero;
+    private String[] jobs = {"Big Swordfish Tank", "Big Villain Arsenal", "Healthy Lt Gabriel Cash Coder", "Losing Programmer", "Old Aries Lickable Cat"};
+    private Stats[] baseStats = {new Stats(jobs[0], 1), new Stats(jobs[1], 1), new Stats(jobs[2], 1), new Stats(jobs[3], 1), new Stats(jobs[4], 1)};
+        
 
     public consoleCreate() {
         System.out.println("\nCONSOLE CREATE VIEW\n");
@@ -24,11 +27,8 @@ public class consoleCreate implements CreateView {
     };
 
     public void setup() {
-        String[] jobs = {"Big Swordfish Tank", "Big Villain Arsenal", "Healthy Lt Gabriel Cash Coder", "Losing Programmer", "Old Aries Lickable Cat"};
-        Stats[] baseStats = {new Stats(jobs[0], 1), new Stats(jobs[1], 1), new Stats(jobs[2], 1), new Stats(jobs[3], 1), new Stats(jobs[4], 1)};
         String name = "";
-        String job = "";
-        Integer i = 0;
+        int i = 0;
         int classCount = 4;
         if (db.isClassUnlocked()) {
             classCount = 5;
@@ -70,22 +70,34 @@ public class consoleCreate implements CreateView {
                     System.out.println("Invalid selection.");
                 }
             }
-            job = jobs[i - 1];
         }
         catch (Exception e) {
             quit();
         }
+        createMenu(name, i - 1);
+    }
+
+    public void setup(String name, int job) {
+        if (controller.isValidHeroName(name)) {
+            createMenu(name, job);
+        } else {
+            setup();
+        }
+        
+    }
+
+    private void createMenu(String name, int index) {
         String input;
         boolean run = true;
         while (run) {
             System.out.println("====================================");
             System.out.println("Name: " + name);
-            System.out.println("Class: " + job);
+            System.out.println("Class: " + jobs[index]);
             System.out.println("Level: 1");
             System.out.println("Experience: 0");
-            System.out.println("Attack: " + baseStats[i - 1].getStat("attack"));
-            System.out.println("Defense: " + baseStats[i - 1].getStat("defense"));
-            System.out.println("Hit Points: " + baseStats[i - 1].getStat("health"));
+            System.out.println("Attack: " + baseStats[index].getStat("attack"));
+            System.out.println("Defense: " + baseStats[index].getStat("defense"));
+            System.out.println("Hit Points: " + baseStats[index].getStat("health"));
             System.out.println("====================================");
             System.out.println("Is this okay? confirm/cancel");
             try {
@@ -103,7 +115,7 @@ public class consoleCreate implements CreateView {
                     run = false;
                     controller.quit();
                 case "confirm":
-                    this.hero = new Hero(name, job);
+                    this.hero = new Hero(name, jobs[index]);
                     run = false;
                     controller.confirm();
                     break;
@@ -114,7 +126,7 @@ public class consoleCreate implements CreateView {
                     break;
                 case "gui":
                     run = false;
-                    controller.switchMode();
+                    controller.switchMode(name, index);
                     break;
                 default:
                     System.out.println("Invalid input.");
@@ -127,8 +139,8 @@ public class consoleCreate implements CreateView {
         System.out.println("Available Commands:\nConfirm - begins game with selected character.\nCancel - cancels selection.\nquit - exit the app.\ngui - switches to gui.\nhelp - what you're seeing right now.");
     }
 
-    public void switchMode() {
-        new guiCreate().setup();
+    public void switchMode(String name, int job) {
+        new guiCreate().setup(name, job);
     }
 
     public void confirm() {

@@ -3,7 +3,6 @@ package swingy;
 import java.util.Scanner;
 import swingy.Utilities.DatabaseText;
 import javax.swing.*;
-import javax.swing.plaf.ColorUIResource;
 
 import swingy.Views.console.consoleHome;
 import swingy.Views.gui.guiHome;
@@ -26,7 +25,6 @@ public class App
         if (window == null) {
             window = new JFrame("SWINGY");
             window.setSize(500, 640);
-            //window.setLayout(null);
             window.setVisible(true);
             window.setResizable(false);
             window.setLocationRelativeTo(null);
