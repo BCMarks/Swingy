@@ -132,7 +132,7 @@ public class guiHome extends JPanel implements HomeView{
 
     public void load() {
         clearWindow();
-        //new guiLoad().setup();
+        new guiLoad().setup();
     }
 
     private void clearWindow() {

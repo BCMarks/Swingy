@@ -7,6 +7,7 @@ import swingy.App;
 import swingy.Controllers.LoadController;
 import swingy.Models.Hero;
 import swingy.Utilities.DatabaseText;
+import swingy.Views.gui.guiLoad;
 import swingy.Views.interfaces.LoadView;
 
 public class consoleLoad implements LoadView {
@@ -14,6 +15,7 @@ public class consoleLoad implements LoadView {
     private static Scanner scanner;
     private static DatabaseText db;
     private Hero hero;
+    private int index;
 
     public consoleLoad() {
         System.out.println("\nCONSOLE LOAD VIEW\n");
@@ -24,42 +26,56 @@ public class consoleLoad implements LoadView {
 
     public void setup() {
         ArrayList<Hero> heroes = db.getAllHeroes();
-        int i = 0, j = 0;
-        System.out.printf("###  %-20s %-29s Level\n", "Name", "Class");
-        for (Hero hero : heroes) {
-            System.out.printf("%03d: %-20s %-29s %02d\n", i+1, hero.getName(), hero.getJob(), hero.getLevel());
-            i++;
-        }
-        System.out.println("Select your hero. [1-"+i+"]");
-        while (j == 0) {
-            try {
-                j = Integer.parseInt(scanner.nextLine());
-                if (j < 1 || j > i) {
-                    j = 0;
+        if (heroes.size() > 0) {
+            int i = 0, j = 0;
+            System.out.printf("###  %-20s %-29s Level\n", "Name", "Class");
+            for (Hero hero : heroes) {
+                System.out.printf("%03d: %-20s %-29s %02d\n", i+1, hero.getName(), hero.getJob(), hero.getLevel());
+                i++;
+            }
+            System.out.println("Select your hero. [1-"+i+"]");
+            while (j == 0) {
+                try {
+                    j = Integer.parseInt(scanner.nextLine());
+                    if (j < 1 || j > i) {
+                        j = 0;
+                        System.out.println("Invalid selection.");
+                    }
+                    else if(!heroes.get(j - 1).getStatus()) {
+                        System.out.println(heroes.get(j - 1).getName()+" is dead and nothing will ever bring them back... probably.");
+                        j = 0;
+                    }
+                } catch (Exception e) {
                     System.out.println("Invalid selection.");
                 }
-                else if(!heroes.get(j - 1).getStatus()) {
-                    System.out.println(heroes.get(j - 1).getName()+" is dead and nothing will ever bring them back... probably.");
-                    j = 0;
-                }
-            } catch (Exception e) {
-                System.out.println("Invalid selection.");
             }
+            this.hero = heroes.get(j - 1);
+            this.index = j - 1;
+            loadConfirmationMenu();
+        } else {
+            System.out.println("There are no heroes available.");
+            controller.cancel();
         }
-        Hero selection = heroes.get(j - 1);
-    
+    }
+
+    public void setup(Hero hero, int index) {
+        this.hero = hero;
+        this.index = index;
+        loadConfirmationMenu();
+    }
+
+    private void loadConfirmationMenu() {
         String input;
         boolean run = true;
-
         while(run) {
             System.out.println("====================================");
-            System.out.println("Name: " + selection.getName());
-            System.out.println("Class: " + selection.getJob());
-            System.out.println("Level: " + selection.getLevel());
-            System.out.println("Experience: " + selection.getXP());
-            System.out.println("Attack: " + selection.getStats().getStat("attack"));
-            System.out.println("Defense: " + selection.getStats().getStat("defense"));
-            System.out.println("Hit Points: " + selection.getStats().getStat("health"));
+            System.out.println("Name: " + hero.getName());
+            System.out.println("Class: " + hero.getJob());
+            System.out.println("Level: " + hero.getLevel());
+            System.out.println("Experience: " + hero.getXP());
+            System.out.println("Attack: " + hero.getStats().getStat("attack"));
+            System.out.println("Defense: " + hero.getStats().getStat("defense"));
+            System.out.println("Hit Points: " + hero.getStats().getStat("health"));
             System.out.println("====================================");
             System.out.println("Is this okay? confirm/cancel");
             try {
@@ -76,7 +92,6 @@ public class consoleLoad implements LoadView {
                 case "quit":
                     controller.quit();
                 case "confirm":
-                    this.hero = selection;
                     run = false;
                     controller.confirm();
                     break;
@@ -100,8 +115,7 @@ public class consoleLoad implements LoadView {
     }
 
     public void switchMode() {
-        //new guiLoad().setup();
-        System.out.println("switched");
+        new guiLoad().setup(index);
     }
 
     public void confirm() {
