@@ -147,7 +147,7 @@ public class GameController {
         if (villainHealth <= 0) {
             villain.setStatus(false);
             dbv.updatevillain(villain);
-            hero.increaseXP(villain.getXP());
+            hero.increaseXP(villain.getXP(), this);
             this.view.grantSpoils(villain);
         }
         return villainHealth;
@@ -179,6 +179,37 @@ public class GameController {
         } else {
             return false;
         }
+    }
+
+    public void displayXPGain(int xp_gain) {
+        this.view.displayXPGain(xp_gain);
+    }
+
+    public void displayLevelUp() {
+        this.view.displayLevelUp();
+    }
+
+    public void displayClosestExit(Hero hero, Map map) {
+        int i = 1;
+        int distance = -1;
+        String direction = "";
+        while (distance < 0) {
+            if (hero.getLocation() - i * map.getMapSize() < 0) {
+                distance = i;
+                direction = "North";
+            } else if (hero.getLocation() + i * map.getMapSize() > map.getTileCount()) {
+                distance = i;
+                direction = "South";
+            } else if ((hero.getLocation() + i) % map.getMapSize() == 1) {
+                distance = i;
+                direction = "East";
+            } else if ((hero.getLocation() - i) % map.getMapSize() == 0) {
+                distance = i;
+                direction = "West";
+            }
+            i++;
+        }
+        this.view.displayClosestExit(distance, direction);
     }
 
     public void help() {

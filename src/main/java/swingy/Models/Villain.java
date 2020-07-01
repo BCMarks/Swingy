@@ -95,8 +95,6 @@ public class Villain {
         return xp;
     }
 
-    //battle method for arena
-
     public void setLocation(int location) {
         this.location = location;
     }

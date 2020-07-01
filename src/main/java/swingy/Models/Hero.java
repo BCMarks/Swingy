@@ -5,6 +5,9 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import swingy.Controllers.GameController;
+import swingy.Views.interfaces.GameView;
+
 public class Hero {
     @Size(min = 2, max = 20)
     private String hero_name;
@@ -57,20 +60,20 @@ public class Hero {
         this.unlockedOALC = jobUnlocked;
     }
 
-    private void updateLevel() {
+    private void updateLevel(GameController controller) {
         double xp_required = this.hero_level * 1000 + Math.pow(this.hero_level - 1, 2) * 450;
-        if(this.hero_xp >= xp_required) {
+        if (this.hero_xp >= xp_required) {
             this.hero_level += 1;
-            System.out.println(hero_name + " is now level "+hero_level+"!");
+            controller.displayLevelUp();
             this.hero_xp -= xp_required;
             this.hero_stats = new Stats(hero_class, hero_level, this.hero_backpack.getBackpackStats());
         }
     }
 
-    public void increaseXP(Integer xp_gain) {
-        System.out.println(xp_gain + " xp gained!");
+    public void increaseXP(Integer xp_gain, GameController controller) {
         this.hero_xp += xp_gain;
-        updateLevel();
+        controller.displayXPGain(xp_gain);
+        updateLevel(controller);
     }
 
     public void setLevel(int level) {

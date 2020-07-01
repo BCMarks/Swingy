@@ -37,18 +37,7 @@ public class consoleCreate implements CreateView {
             System.out.println("What is your name, hero?");
             while (!controller.isValidHeroName(name)) {
                 name = scanner.nextLine();
-                if (name.length() < 3 ) {
-                    System.out.println("A small name for a small hero. Make it longer!");
-                } else if (name.length() > 20) {
-                    System.out.println("Trying to overcompensate for something? Pick a shorter name.");
-                } else if (name.toLowerCase().equals("admin")) {
-                    System.out.println("That name is reserved. Pick a different one.");
-                } else if (controller.nameExists(name)) {
-                    System.out.println("A hero by that name is already registered.");
-                }
-                if (!name.matches("^[a-zA-Z0-9]*$")) {
-                    System.out.println("A valid hero name may only contain alphanumeric characters.");
-                }
+                nameCheck(name);
             }
             System.out.println("Choose one of the following classes. [1-"+classCount+"]");
             System.out.println("Option\tClass\t\t\t\tAttack\tDefense\tHit Points");
@@ -81,9 +70,25 @@ public class consoleCreate implements CreateView {
         if (controller.isValidHeroName(name)) {
             createMenu(name, job);
         } else {
+            nameCheck(name);
             setup();
         }
         
+    }
+
+    private void nameCheck(String name) {
+        if (name.length() < 3 ) {
+            System.out.println("A small name for a small hero. Make it longer!");
+        } else if (name.length() > 20) {
+            System.out.println("Trying to overcompensate for something? Pick a shorter name.");
+        } else if (name.toLowerCase().equals("admin")) {
+            System.out.println("That name is reserved. Pick a different one.");
+        } else if (controller.nameExists(name)) {
+            System.out.println("A hero by that name is already registered.");
+        }
+        if (!name.matches("^[a-zA-Z0-9]*$")) {
+            System.out.println("A valid hero name may only contain alphanumeric characters.");
+        }
     }
 
     private void createMenu(String name, int index) {
@@ -145,7 +150,7 @@ public class consoleCreate implements CreateView {
 
     public void confirm() {
         db.insertHero(hero);
-        new consoleGame().setup(hero);
+        new consoleGame().setup(hero, false);
     }
 
     public void cancel() {

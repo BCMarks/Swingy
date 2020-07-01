@@ -10,6 +10,7 @@ import swingy.Models.Map;
 import swingy.Models.Stats;
 import swingy.Models.Villain;
 import swingy.Utilities.DatabaseText;
+import swingy.Views.gui.guiGame;
 import swingy.Views.interfaces.GameView;
 
 public class consoleGame implements GameView {
@@ -17,6 +18,8 @@ public class consoleGame implements GameView {
     private static Scanner scanner;
     private static DatabaseText db;
     private Hero hero;
+    private Map map;
+    private ArrayList<Villain> villains;
 
     public consoleGame() {
         System.out.println("\nCONSOLE GAME VIEW\n");
@@ -25,15 +28,15 @@ public class consoleGame implements GameView {
         db = App.getDatabase();
     };
 
-    public void setup(Hero hero) {
+    public void setup(Hero hero, boolean resetHeroLocation) {
         this.hero = hero;
         boolean run = true;
-        boolean resetHeroLocation = false;
         String input;
-        System.out.println(hero.getName() + " is ready to fight!\n");
         while (run) {
-            Map map = new Map(hero);
-            ArrayList<Villain> villains = controller.generateVillains(map, hero);
+            if (map == null) {
+                map = new Map(hero);
+            }
+            villains = controller.generateVillains(map, hero);
             boolean activeFloor = true;
             if (resetHeroLocation) {
                 hero.setLocation(map.getMapCenter());
@@ -42,7 +45,7 @@ public class consoleGame implements GameView {
             }
             while (activeFloor) {
                 System.out.println("Input your command and press enter. (\"help\" for command list.)");
-                System.out.println(hero.getName() + " is located at tile " + hero.getLocation());
+                controller.displayClosestExit(hero, map);
                 try {
                     input = scanner.nextLine().toLowerCase();
                 }
@@ -105,29 +108,42 @@ public class consoleGame implements GameView {
         }
     }
 
+    public void setup(Hero hero, Map map) {
+        this.map = map;
+        setup(hero, false);
+    }
+
     public boolean moveHero(String direction, Map map, ArrayList<Villain> villains) {
         int currentPosition = hero.getLocation();
         int targetPosition;
-        if (direction.equals("north") || direction.equals("n")) {
-            targetPosition = currentPosition - map.getMapSize();
-        } else if (direction.equals("south") || direction.equals("s")) {
-            targetPosition = currentPosition + map.getMapSize();
-        } else if (direction.equals("east") || direction.equals("e")) {
-            targetPosition = currentPosition + 1;
-        } else if (direction.equals("west") || direction.equals("w")) {
-            targetPosition = currentPosition - 1;
-        } else {
-            System.out.println("Invalid input. Choose from [NORTH, SOUTH, EAST, WEST]");
-            return true;
-        }
+        switch (direction) {
+            case "north":
+            case "n":
+                targetPosition = currentPosition - map.getMapSize();
+                break;
+            case "south":
+            case "s":
+                targetPosition = currentPosition + map.getMapSize();
+                break;
+            case "east":
+            case "e":
+                targetPosition = currentPosition + 1;
+                break;
+            case "west":
+            case "w":
+                targetPosition = currentPosition - 1;
+                break;
+            default:
+                System.out.println("Invalid input. Choose from [NORTH, SOUTH, EAST, WEST]");
+                return true;
 
+        }
+        
         if (targetPosition < 0 ||
             targetPosition > map.getTileCount() ||
             (targetPosition % map.getMapSize() == 1 && (direction.equals("east") || direction.equals("e"))) ||
             (targetPosition % map.getMapSize() == 0 && (direction.equals("west") || direction.equals("w")))) {
-                System.out.println(hero.getName() + " has moved on to the next level!");
-                hero.setWins(map.getFloor());
-                db.updateHero(hero);
+                controller.gameWon();
                 controller.removeVillains(hero);
                 return false;
         } else {
@@ -205,6 +221,7 @@ public class consoleGame implements GameView {
     public void gameVictory() {
         System.out.println(hero.getName() + " has moved on to the next level!");
         hero.setWins(hero.getWins() + 1);
+        map = null;
         db.updateHero(hero);
     }
 
@@ -278,7 +295,7 @@ public class consoleGame implements GameView {
                     }
                     break;
                 case "4":
-                    hero.increaseXP(3000);
+                    hero.increaseXP(3000, controller);
                     awaitingDecision = false;
                     break;
                 default:
@@ -334,7 +351,7 @@ public class consoleGame implements GameView {
                         input = "";
                         quit();
                     }
-                    switch(input) {
+                    switch (input) {
                         case "y":
                         case "yes":
                             System.out.println("Discarded "+hero.getInventory().getArtefactName(type));
@@ -359,13 +376,24 @@ public class consoleGame implements GameView {
         }
     }
 
+    public void displayXPGain(int xp_gain) {
+        System.out.println(xp_gain+" xp gained!");
+    }
+
+    public void displayLevelUp() {
+        System.out.println(hero.getName() + " is now level "+hero.getLevel()+"!");
+    }
+
+    public void displayClosestExit(int distance, String direction) {
+        System.out.println("The nearest exit is "+distance+" units "+direction+".");
+    }
+
     public void help()  {
         System.out.println("Available Commands:\nConfirm - begins game with selected character.\nCancel - cancels hero.\nquit - exit the app.\ngui - switches to gui.\nhelp - what you're seeing right now.");
     }
 
     public void switchMode() {
-        //new guiGame().setup();
-        System.out.println("switched");
+        new guiGame().setup(hero, map, villains);
     }
 
     public void quit() {

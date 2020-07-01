@@ -99,6 +99,7 @@ public class guiCreate extends JPanel implements CreateView {
         this.menu.add(quit);
         this.menuBar.add(menu);
 
+        heroName.setToolTipText("Enter your hero name.");
         jobDetails.append("Class\t\tAttack\tDefense\tHit Points\n"+
         "-------------------------------------------------"+
         "-------------------------------------------------\n"+
@@ -126,7 +127,7 @@ public class guiCreate extends JPanel implements CreateView {
         this.add(heroName, gbc);
         this.add(heroJob, gbc);
         this.add(jobDetails, gbc);
-        this.add(confirm, gbc);
+        this.add(confirm);
         this.add(cancel, gbc);
 
         this.setVisible(true);
@@ -157,7 +158,7 @@ public class guiCreate extends JPanel implements CreateView {
     public void confirm() {
         db.insertHero(hero);
         clearWindow();
-        //new guiGame().setup();
+        new guiGame().setup(hero, false);
     }
 
     public void cancel() {

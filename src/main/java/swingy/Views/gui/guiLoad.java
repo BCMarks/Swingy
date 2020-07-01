@@ -60,7 +60,11 @@ public class guiLoad extends JPanel implements LoadView {
     public void setup() {
         confirm.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
-                controller.confirm();
+                if (heroes.get(heroList.getSelectedIndex()).getStatus()) {
+                    controller.confirm();
+                } else {
+                    JOptionPane.showMessageDialog(window, heroes.get(heroList.getSelectedIndex()).getName()+" is dead and nothing will ever bring them back... probably.", "Obituary", JOptionPane.INFORMATION_MESSAGE);
+                }
             }
         });
 
@@ -99,6 +103,7 @@ public class guiLoad extends JPanel implements LoadView {
         this.menu.add(quit);
         this.menuBar.add(menu);
 
+        heroList.setToolTipText("Select your hero.");
         heroList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         if (heroList.getSelectedIndex() == -1) {
             heroList.setSelectedIndex(0);
@@ -115,13 +120,18 @@ public class guiLoad extends JPanel implements LoadView {
         cancel.setMinimumSize(buttonSize);
 
         this.add(listScrollPane, gbc);
-        this.add(confirm, gbc);
+        this.add(confirm);
         this.add(cancel, gbc);
 
         this.setVisible(true);
         window.setContentPane(this);
         window.setJMenuBar(menuBar);
         window.revalidate();
+
+        if (heroes.size() == 0) {
+            JOptionPane.showMessageDialog(window, "There are no heroes available.", "No more heroes", JOptionPane.INFORMATION_MESSAGE);
+            controller.cancel();
+        }
     }
 
     public void setup(int index) {
@@ -146,7 +156,7 @@ public class guiLoad extends JPanel implements LoadView {
 
     public void confirm() {
         clearWindow();
-        //new guiGame().setup(heroes.get(heroList.getSelectedIndex()));
+        new guiGame().setup(heroes.get(heroList.getSelectedIndex()), false);
     }
 
     public void cancel() {

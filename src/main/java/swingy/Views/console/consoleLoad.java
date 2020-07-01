@@ -59,15 +59,20 @@ public class consoleLoad implements LoadView {
     }
 
     public void setup(Hero hero, int index) {
-        this.hero = hero;
-        this.index = index;
-        loadConfirmationMenu();
+        if (!hero.getStatus()) {
+            System.out.println(hero.getName()+" is dead and nothing will ever bring them back... probably.");
+            setup();
+        } else {
+            this.hero = hero;
+            this.index = index;
+            loadConfirmationMenu();
+        }
     }
 
     private void loadConfirmationMenu() {
         String input;
         boolean run = true;
-        while(run) {
+        while (run) {
             System.out.println("====================================");
             System.out.println("Name: " + hero.getName());
             System.out.println("Class: " + hero.getJob());
@@ -119,7 +124,7 @@ public class consoleLoad implements LoadView {
     }
 
     public void confirm() {
-        new consoleGame().setup(hero);
+        new consoleGame().setup(hero, false);
     }
 
     public void cancel() {
