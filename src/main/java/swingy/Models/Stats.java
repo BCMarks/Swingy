@@ -43,13 +43,13 @@ public class Stats {
                 this.health = 10 + (level - 1);
                 break;
             case "Healthy Lt Gabriel Cash Coder":
-                this.attack = 3 + (level - 1);
-                this.defense = 3 + (level - 1);
+                this.attack = 2 + (level - 1);
+                this.defense = 2 + (level - 1);
                 this.health = 21 + 2 * (level - 1);
                 break;
             case "Old Aries Lickable Cat": 
-                this.attack = 11 + (level / 2);
-                this.defense = 11 +  (level / 2);
+                this.attack = 10 + (level / 2);
+                this.defense = 10 +  (level / 2);
                 this.health = 42 + (level / 2);
                 break;
             default:
@@ -98,13 +98,13 @@ public class Stats {
                 this.health = 10 + (level - 1);
                 break;
             case "Healthy Lt Gabriel Cash Coder":
-                this.attack = 3 + (level - 1);
-                this.defense = 3 + (level - 1);
+                this.attack = 2 + (level - 1);
+                this.defense = 2 + (level - 1);
                 this.health = 21 + 2 * (level - 1);
                 break;
             case "Old Aries Lickable Cat": 
-                this.attack = 11 + (level / 2);
-                this.defense = 11 +  (level / 2);
+                this.attack = 10 + (level / 2);
+                this.defense = 10 +  (level / 2);
                 this.health = 42 + (level / 2);
                 break;
             default:

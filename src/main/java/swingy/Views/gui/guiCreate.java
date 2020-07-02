@@ -105,7 +105,7 @@ public class guiCreate extends JPanel implements CreateView {
         "-------------------------------------------------\n"+
         jobs[0]+"\t   2\t   5\t  10\n"+
         jobs[1]+"\t   5\t   2\t  10\n"+
-        jobs[2]+"\t   3\t   3\t  21\n"+
+        jobs[2]+"\t   2\t   2\t  21\n"+
         jobs[3]+"\t   1\t   1\t   1");
 
         if (heroJob.getSelectedIndex() == -1) {
@@ -114,7 +114,7 @@ public class guiCreate extends JPanel implements CreateView {
         if (!db.isClassUnlocked()) {
             heroJob.removeItemAt(4);
         } else {
-            jobDetails.append("\n"+jobs[4]+"\t  11\t  11\t  42");
+            jobDetails.append("\n"+jobs[4]+"\t  10\t  10\t  42");
         }
         jobDetails.setEditable(false);
 

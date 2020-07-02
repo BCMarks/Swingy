@@ -6,7 +6,6 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import swingy.Controllers.GameController;
-import swingy.Views.interfaces.GameView;
 
 public class Hero {
     @Size(min = 2, max = 20)

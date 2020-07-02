@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JList;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -114,8 +115,11 @@ public class guiGame extends JPanel implements GameView {
         this.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.gridwidth = GridBagConstraints.REMAINDER;
-        //gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.insets = new Insets(5, 5, 5, 5);
+
+        GridBagConstraints gbcE = new GridBagConstraints();
+        gbcE.gridwidth = GridBagConstraints.REMAINDER;
+        gbcE.insets = new Insets(5, 70, 5, 5);
 
         this.menu.add(mode);
         this.menu.add(help);
@@ -129,22 +133,22 @@ public class guiGame extends JPanel implements GameView {
         heroStats.setEditable(false);
         heroInventory.setEditable(false);
 
-        Dimension buttonSize = new Dimension(200, 100);
+        Dimension buttonSize = new Dimension(100, 100);
         moveNorth.setPreferredSize(buttonSize);
-        moveNorth.setPreferredSize(buttonSize);
-        moveEast.setMinimumSize(buttonSize);
-        moveEast.setMinimumSize(buttonSize);
+        moveEast.setPreferredSize(buttonSize);
         moveWest.setPreferredSize(buttonSize);
-        moveWest.setPreferredSize(buttonSize);
-        moveSouth.setMinimumSize(buttonSize);
+        moveSouth.setPreferredSize(buttonSize);
+        moveNorth.setMinimumSize(buttonSize);
+        moveEast.setMinimumSize(buttonSize);
+        moveWest.setMinimumSize(buttonSize);
         moveSouth.setMinimumSize(buttonSize);
  
         this.add(compass, gbc);
         this.add(heroStats);
         this.add(heroInventory, gbc);
         this.add(moveNorth, gbc);
-        this.add(moveEast);
-        this.add(moveWest, gbc);
+        this.add(moveWest);
+        this.add(moveEast,gbcE);
         this.add(moveSouth, gbc);
 
         this.setVisible(true);
@@ -329,15 +333,14 @@ public class guiGame extends JPanel implements GameView {
     }
 
     private void dragonBalls() {
-        //popup
-        System.out.println("The defeated dragon has acknowledged your skill.");
-        System.out.println("It shall grant you one of the following wishes:");
-        System.out.println("1: Access to the Arena.");
-        System.out.println("2: The power of a new class shall be unlocked.");
-        System.out.println("3: A fallen hero shall be granted life.");
-        System.out.println("4: An increase in your own power.");
-        boolean awaitingDecision = true;
-        String input = "1";
+        String message = "The defeated dragon has acknowledged your skill.\n"+
+            "It shall grant you one of the following wishes:\n"+
+            "1: Access to the Arena.\n"+
+            "2: The power of a new class shall be unlocked.\n"+
+            "3: A fallen hero shall be granted life.\n"+
+            "4: An increase in your own power.";;
+        String[] options = {"1", "2", "3", "4"};
+        int choice = JOptionPane.showOptionDialog(window, message, "Dragon Wish", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
         ArrayList<Hero> allHeroes = db.getAllHeroes();
         ArrayList<Hero> deadHeroes = new ArrayList<Hero>();
         boolean arenaUnlocked = db.isArenaUnlocked();
@@ -347,70 +350,55 @@ public class guiGame extends JPanel implements GameView {
                 deadHeroes.add(establishedHero);
             }
         }
-        while (awaitingDecision) {
-            switch (input) {
-                case "1":
-                    if (arenaUnlocked) {
-                        System.out.println("Access to the Arena has already been granted to all.");
-                    } else {
-                        System.out.println("The Arena is now open!");
-                        hero.activateArena();
-                        awaitingDecision = false;
-                    }
-                    break;
-                case "2":
-                    if (jobUnlocked) {
-                        System.out.println("The power of the Old Aries Lickable Cat has already been unlocked.");
-                    } else {
-                        System.out.println("The strength of the Old Aries Lickable Cat has been unlocked!");
-                        hero.activateOALC();
-                        awaitingDecision = false;
-                    }
-                    break;
-                case "3":
-                    if (deadHeroes.size() == 0) {
-                        System.out.println("There are no heroes that need reviving.");
-                    } else {
-                        revivalMenu(deadHeroes);
-                        awaitingDecision = false;
-                    }
-                    break;
-                case "4":
-                    hero.increaseXP(3000, controller);
-                    awaitingDecision = false;
-                    break;
-                default:
-                    System.out.println("Select a valid wish.");
-            }
-        } 
+        switch (choice) {
+            case 0:
+                if (arenaUnlocked) {
+                    JOptionPane.showMessageDialog(window, "Access to the Arena has already been granted to all.", "Wish: Arena", JOptionPane.INFORMATION_MESSAGE);
+                    dragonBalls();
+                } else {
+                    JOptionPane.showMessageDialog(window, "The Arena is now open!", "Wish: Arena", JOptionPane.INFORMATION_MESSAGE);
+                    hero.activateArena();
+                }
+                break;
+            case 1:
+                if (jobUnlocked) {
+                    JOptionPane.showMessageDialog(window, "The power of the Old Aries Lickable Cat has already been unlocked.", "Wish: Class", JOptionPane.INFORMATION_MESSAGE);
+                    dragonBalls();
+                } else {
+                    JOptionPane.showMessageDialog(window, "The strength of the Old Aries Lickable Cat has been unlocked!", "Wish: Class", JOptionPane.INFORMATION_MESSAGE);
+                    hero.activateOALC();
+                }
+                break;
+            case 2:
+                if (deadHeroes.size() == 0) {
+                    JOptionPane.showMessageDialog(window, "There are no heroes that need reviving.", "Wish: Life", JOptionPane.INFORMATION_MESSAGE);
+                    dragonBalls();
+                } else {
+                    revivalMenu(deadHeroes);
+                }
+                break;
+            case 3:
+                hero.increaseXP(3000, controller);
+                break;
+            default:
+                dragonBalls();
+        }
     }
 
     private void revivalMenu(ArrayList<Hero> deadHeroes) {
-        //popup
-        System.out.println("Choose the one to be revived.");
-        int i = 1;
+        ArrayList<String> deadList = new ArrayList<String>();
         for (Hero hero : deadHeroes) {
-            System.out.println(i+": "+hero.getName());
-            i++;
+            deadList.add(hero.getName());
         }
-        int deadCount = deadHeroes.size();
-        i = 0;
-        while(i == 0) {
-            try {
-                //i = Integer.parseInt(scanner.nextLine());
-                i = 2;
-                if(i < 1 || i > deadCount) {
-                    i = 0;
-                    System.out.println("Invalid selection.");
-                }
-            } catch (Exception e) {
-                System.out.println("Invalid selection.");
-            }
+        int choice = JOptionPane.showOptionDialog(window, "Choose the one to be revived.", "Wish: Life", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null, deadList.toArray(), deadList.toArray()[0]);
+        if (choice < 0) {
+            revivalMenu(deadHeroes);
+        } else {
+            Hero luckyGuy = deadHeroes.get(choice);
+            luckyGuy.setStatus(true);
+            db.updateHero(luckyGuy);
+            JOptionPane.showMessageDialog(window, luckyGuy.getName()+" has been revived!", "Wish: Life", JOptionPane.INFORMATION_MESSAGE);
         }
-        Hero luckyGuy = deadHeroes.get(i - 1);
-        luckyGuy.setStatus(true);
-        db.updateHero(luckyGuy);
-        System.out.println(luckyGuy.getName()+" has been revived!");
     }
 
     private void doArtefactDrop(Villain villain, String type, String stat) {
