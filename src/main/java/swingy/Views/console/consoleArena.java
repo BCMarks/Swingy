@@ -6,6 +6,7 @@ import swingy.Controllers.ArenaController;
 import swingy.Models.Hero;
 import swingy.Models.Villain;
 import swingy.Utilities.DatabaseText;
+import swingy.Views.gui.guiArena;
 import swingy.Views.interfaces.ArenaView;
 
 public class consoleArena implements ArenaView {
@@ -48,7 +49,7 @@ public class consoleArena implements ArenaView {
                     break;
                 case "gui":
                     run = false;
-                    //controller.switchMode();
+                    controller.switchMode();
                     break;
                 default:
                     System.out.println("baka");
@@ -169,7 +170,7 @@ public class consoleArena implements ArenaView {
     }
 
     public void switchMode() {
-        //new guiArena().setup();
+        new guiArena().setup();
     }
 
     public void quit() {

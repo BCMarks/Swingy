@@ -24,7 +24,7 @@ public class App
     public static JFrame getFrame() {
         if (window == null) {
             window = new JFrame("SWINGY");
-            window.setSize(500, 640);
+            window.setSize(600, 740);
             window.setVisible(true);
             window.setResizable(false);
             window.setLocationRelativeTo(null);

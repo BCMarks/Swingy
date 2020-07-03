@@ -122,7 +122,7 @@ public class guiHome extends JPanel implements HomeView{
 
     public void arena() {
         clearWindow();
-        //new guiArena().setup();
+        new guiArena().setup();
     }
     
     public void create() {
