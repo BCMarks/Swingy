@@ -94,7 +94,6 @@ public class guiLoad extends JPanel implements LoadView {
         this.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.gridwidth = GridBagConstraints.REMAINDER;
-        //gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.insets = new Insets(5, 5, 5, 5);
 
         this.menu.add(mode);
@@ -138,9 +137,8 @@ public class guiLoad extends JPanel implements LoadView {
         setup();
     }
 
-    //Do proper help later
     public void help()  {
-        String message = "THIS IS THE HELP VIEW";
+        String message = "Select a previously created hero to continue the climb!";
 
         JOptionPane.showMessageDialog(window, message, "Help", JOptionPane.INFORMATION_MESSAGE);
     }

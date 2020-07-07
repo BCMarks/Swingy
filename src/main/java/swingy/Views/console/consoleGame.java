@@ -22,7 +22,6 @@ public class consoleGame implements GameView {
     private ArrayList<Villain> villains;
 
     public consoleGame() {
-        System.out.println("\nCONSOLE GAME VIEW\n");
         controller = new GameController(this);
         scanner = App.getScanner();
         db = App.getDatabase();
@@ -32,6 +31,7 @@ public class consoleGame implements GameView {
         this.hero = hero;
         boolean run = true;
         String input;
+        System.out.println("\n"+hero.getName()+" enters the tower on floor "+(hero.getWins() + 1));
         while (run) {
             if (map == null) {
                 map = new Map(hero);
@@ -44,7 +44,7 @@ public class consoleGame implements GameView {
                 resetHeroLocation = false;
             }
             while (activeFloor) {
-                System.out.println("Input your command and press enter. (\"help\" for command list.)");
+                System.out.println("\nInput your command and press enter. (\"help\" for command list.)");
                 controller.displayClosestExit(hero, map);
                 try {
                     input = scanner.nextLine().toLowerCase();
@@ -65,7 +65,7 @@ public class consoleGame implements GameView {
                         controller.switchMode();
                         break;
                     case "stats":
-                        System.out.println("====================================");
+                        System.out.println("\n====================================");
                         System.out.println("Name: " + hero.getName());
                         System.out.println("Class: " + hero.getJob());
                         System.out.println("Level: " + hero.getLevel());
@@ -76,7 +76,7 @@ public class consoleGame implements GameView {
                         System.out.println("====================================");
                         break;
                     case "inventory":
-                        System.out.println("====================================");
+                        System.out.println("\n====================================");
                         System.out.println("Weapon: "+hero.getInventory().getArtefactName("Weapon")+" (+"+hero.getInventory().getBackpackStats().getStat("attack")+")");
                         System.out.println("Armour: "+hero.getInventory().getArtefactName("Armour")+" (+"+hero.getInventory().getBackpackStats().getStat("defense")+")");
                         System.out.println("Helm: "+hero.getInventory().getArtefactName("Helm")+" (+"+hero.getInventory().getBackpackStats().getStat("health")+")");
@@ -101,7 +101,7 @@ public class consoleGame implements GameView {
                         }
                         break;
                     default:
-                        System.out.println("baka");
+                        System.out.println("Invalid Input.");
                         break;
                 }
             }
@@ -134,7 +134,7 @@ public class consoleGame implements GameView {
                 targetPosition = currentPosition - 1;
                 break;
             default:
-                System.out.println("Invalid input. Choose from [NORTH, SOUTH, EAST, WEST]");
+                System.out.println("Invalid Input. Choose from [NORTH, SOUTH, EAST, WEST]");
                 return true;
 
         }
@@ -156,15 +156,15 @@ public class consoleGame implements GameView {
             }
             if (currentVillain != null) {
                 if (currentVillain.getName().length() > 0) {
-                    System.out.println("You have encountered "+currentVillain.getName()+", a former "+currentVillain.getJob());
+                    System.out.println("\nYou have encountered "+currentVillain.getName()+", a former "+currentVillain.getJob());
                 } else {
-                    System.out.println("You have encountered "+currentVillain.getJob());
+                    System.out.println("\nYou have encountered "+currentVillain.getJob());
                 }
                 boolean battleWon = false;
                 boolean awaitingDecision = true;
                 String input;
                 while (awaitingDecision) {
-                    System.out.println("Input your command and press enter. (\"help\" for command list.)");
+                    System.out.println("\nInput your command and press enter. (\"help\" for command list.)");
                     try {
                         input = scanner.nextLine().toLowerCase();
                     }
@@ -178,9 +178,6 @@ public class consoleGame implements GameView {
                             break;
                         case "quit":
                             controller.quit();
-                        case "gui":
-                            awaitingDecision = false;
-                            controller.switchMode();
                             break;
                         case "fight":
                             battleWon = controller.fight(false, hero, currentVillain);
@@ -188,15 +185,15 @@ public class consoleGame implements GameView {
                             break;
                         case "flee":
                             if (!controller.flee()) {
-                                System.out.println("Your cowardice enrages your opponent!");
+                                System.out.println("\nYour cowardice enrages your opponent!");
                                 battleWon = controller.fight(true, hero, currentVillain);   
                             } else {
-                                System.out.println("Managed to escape!");
+                                System.out.println("\nManaged to escape!");
                             }
                             awaitingDecision = false;
                             break;
                         default:
-                            System.out.println("baka");
+                            System.out.println("Invalid Input.");
                             break;
                     }
                 }
@@ -214,12 +211,12 @@ public class consoleGame implements GameView {
     }
 
     public void gameOver() {
-        System.out.println(hero.getName() + " has been slain.");
+        System.out.println("\n" + hero.getName() + " has been slain.");
         new consoleHome().setup();
     }
 
     public void gameVictory() {
-        System.out.println(hero.getName() + " has moved on to the next level!");
+        System.out.println("\n" + hero.getName() + " has moved on to the next level!");
         hero.setWins(hero.getWins() + 1);
         map = null;
         db.updateHero(hero);
@@ -242,7 +239,7 @@ public class consoleGame implements GameView {
     }
 
     private void dragonBalls() {
-        System.out.println("The defeated dragon has acknowledged your skill.");
+        System.out.println("\nThe defeated dragon has acknowledged your skill.");
         System.out.println("It shall grant you one of the following wishes:");
         System.out.println("1: Access to the Arena.");
         System.out.println("2: The power of a new class shall be unlocked.");
@@ -272,7 +269,7 @@ public class consoleGame implements GameView {
                     if (arenaUnlocked) {
                         System.out.println("Access to the Arena has already been granted to all.");
                     } else {
-                        System.out.println("The Arena is now open!");
+                        System.out.println("\nThe Arena is now open!");
                         hero.activateArena();
                         awaitingDecision = false;
                     }
@@ -281,7 +278,7 @@ public class consoleGame implements GameView {
                     if (jobUnlocked) {
                         System.out.println("The power of the Old Aries Lickable Cat has already been unlocked.");
                     } else {
-                        System.out.println("The strength of the Old Aries Lickable Cat has been unlocked!");
+                        System.out.println("\nThe strength of the Old Aries Lickable Cat has been unlocked!");
                         hero.activateOALC();
                         awaitingDecision = false;
                     }
@@ -305,8 +302,9 @@ public class consoleGame implements GameView {
     }
 
     private void revivalMenu(ArrayList<Hero> deadHeroes) {
-        System.out.println("Choose the one to be revived.");
+        System.out.println("\nChoose the one to be revived.");
         int i = 1;
+        String selection = "";
         for (Hero hero : deadHeroes) {
             System.out.println(i+": "+hero.getName());
             i++;
@@ -315,7 +313,12 @@ public class consoleGame implements GameView {
         i = 0;
         while(i == 0) {
             try {
-                i = Integer.parseInt(scanner.nextLine());
+                try {
+                    selection = scanner.nextLine();
+                } catch (Exception e) {
+                    quit();
+                }
+                i = Integer.parseInt(selection);
                 if(i < 1 || i > deadCount) {
                     i = 0;
                     System.out.println("Invalid selection.");
@@ -327,7 +330,7 @@ public class consoleGame implements GameView {
         Hero luckyGuy = deadHeroes.get(i - 1);
         luckyGuy.setStatus(true);
         db.updateHero(luckyGuy);
-        System.out.println(luckyGuy.getName()+" has been revived!");
+        System.out.println("\n" + luckyGuy.getName()+" has been revived!");
     }
 
     private void doArtefactDrop(Villain villain, String type, String stat) {
@@ -343,7 +346,7 @@ public class consoleGame implements GameView {
                 boolean awaitingDecision = true;
                 String input;
                 while (awaitingDecision) {
-                    System.out.println("Replace "+hero.getInventory().getArtefactName(type)+" (+"+hero.getInventory().getBackpackStats().getStat(stat)+") with "+villain.getInventory().getArtefactName(type)+" (+"+villain.getInventory().getBackpackStats().getStat(stat)+")? (Y/N)");
+                    System.out.println("\nReplace "+hero.getInventory().getArtefactName(type)+" (+"+hero.getInventory().getBackpackStats().getStat(stat)+") with "+villain.getInventory().getArtefactName(type)+" (+"+villain.getInventory().getBackpackStats().getStat(stat)+")? (Y/N)");
                     try {
                         input = scanner.nextLine().toLowerCase();
                     }
@@ -354,7 +357,7 @@ public class consoleGame implements GameView {
                     switch (input) {
                         case "y":
                         case "yes":
-                            System.out.println("Discarded "+hero.getInventory().getArtefactName(type));
+                            System.out.println("\nDiscarded "+hero.getInventory().getArtefactName(type));
                             hero.getInventory()
                             .acceptArtefact(
                                 type,
@@ -368,7 +371,7 @@ public class consoleGame implements GameView {
                             awaitingDecision = false;
                             break;
                         default:
-                            System.out.println("baka");
+                            System.out.println("Invalid Input.");
                             break;
                     }
                 }
@@ -381,15 +384,16 @@ public class consoleGame implements GameView {
     }
 
     public void displayLevelUp() {
-        System.out.println(hero.getName() + " is now level "+hero.getLevel()+"!");
+        System.out.println("\n" + hero.getName() + " is now level "+hero.getLevel()+"!");
     }
 
     public void displayClosestExit(int distance, String direction) {
         System.out.println("The nearest exit is "+distance+" units "+direction+".");
     }
 
-    public void help()  {
-        System.out.println("Available Commands:\nConfirm - begins game with selected character.\nCancel - cancels hero.\nquit - exit the app.\ngui - switches to gui.\nhelp - what you're seeing right now.");
+    public void help() {
+        String message = "\nAvailable Commands:\n\n(Out of Battle):\nNORTH/EAST/WEST/SOUTH - Move in specified direction.\nSTATS - Displays current hero statistics.\nINVENTORY - Displays current hero inventory.\n\n(In Battle):\nFIGHT - Engage the enemy.\nFLEE - Back away from the enemy (50% success).\n\n(Both):\nQUIT - Exit the app.\nGUI - Switches to gui.\nHELP - What you're seeing right now.";
+        System.out.println(message);
     }
 
     public void switchMode() {
@@ -399,7 +403,6 @@ public class consoleGame implements GameView {
     public void quit() {
         System.out.println("Sayonara~");
         scanner.close();
-        //exit jframe?
         System.exit(0);
     }
 }

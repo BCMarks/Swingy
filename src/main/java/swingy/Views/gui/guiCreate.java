@@ -91,7 +91,6 @@ public class guiCreate extends JPanel implements CreateView {
         this.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.gridwidth = GridBagConstraints.REMAINDER;
-        //gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.insets = new Insets(5, 5, 5, 5);
 
         this.menu.add(mode);
@@ -142,9 +141,8 @@ public class guiCreate extends JPanel implements CreateView {
         setup();
     }
 
-    //Do proper help later
     public void help()  {
-        String message = "THIS IS THE HELP VIEW";
+        String message = "Create a new hero by entering a name in the text field and selecting a class from the dropdown list.\n\nA valid hero name may only contain alphanumeric characters, must be between 3 and 20 characters long and must be unique.";
 
         JOptionPane.showMessageDialog(window, message, "Help", JOptionPane.INFORMATION_MESSAGE);
     }

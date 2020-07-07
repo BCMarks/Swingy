@@ -10,7 +10,6 @@ import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JList;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -127,7 +126,6 @@ public class guiGame extends JPanel implements GameView {
         this.menuBar.add(menu);
 
         updateHeroDisplays();
-        //set display sizes
         compass.setEditable(false);
         controller.displayClosestExit(hero, map);
         heroStats.setEditable(false);
@@ -200,9 +198,8 @@ public class guiGame extends JPanel implements GameView {
         compass.setText("The nearest exit is "+distance+" units "+direction+".");
     }
 
-    //Do proper help later
     public void help()  {
-        String message = "THIS IS THE HELP VIEW";
+        String message = "The hero's stats, inventory and distance from the nearest exit are displayed.\nThe goal is to move to an exit by navigating the four cardinal directions using the buttons.\nOn reaching the goal, the hero is teleported to the middle of the next floor.";
 
         JOptionPane.showMessageDialog(window, message, "Help", JOptionPane.INFORMATION_MESSAGE);
     }

@@ -18,7 +18,7 @@ public class consoleLoad implements LoadView {
     private int index;
 
     public consoleLoad() {
-        System.out.println("\nCONSOLE LOAD VIEW\n");
+        System.out.println("\nLoad Existing Hero!");
         controller = new LoadController(this);
         scanner = App.getScanner();
         db = App.getDatabase();
@@ -28,7 +28,8 @@ public class consoleLoad implements LoadView {
         ArrayList<Hero> heroes = db.getAllHeroes();
         if (heroes.size() > 0) {
             int i = 0, j = 0;
-            System.out.printf("###  %-20s %-29s Level\n", "Name", "Class");
+            String selection = "";
+            System.out.printf("\n###  %-20s %-29s Level\n", "Name", "Class");
             for (Hero hero : heroes) {
                 System.out.printf("%03d: %-20s %-29s %02d\n", i+1, hero.getName(), hero.getJob(), hero.getLevel());
                 i++;
@@ -36,7 +37,12 @@ public class consoleLoad implements LoadView {
             System.out.println("Select your hero. [1-"+i+"]");
             while (j == 0) {
                 try {
-                    j = Integer.parseInt(scanner.nextLine());
+                    try {
+                        selection = scanner.nextLine();
+                    } catch (Exception e) {
+                        quit();
+                    }
+                    j = Integer.parseInt(selection);
                     if (j < 1 || j > i) {
                         j = 0;
                         System.out.println("Invalid selection.");
@@ -73,7 +79,7 @@ public class consoleLoad implements LoadView {
         String input;
         boolean run = true;
         while (run) {
-            System.out.println("====================================");
+            System.out.println("\n====================================");
             System.out.println("Name: " + hero.getName());
             System.out.println("Class: " + hero.getJob());
             System.out.println("Level: " + hero.getLevel());
@@ -109,14 +115,15 @@ public class consoleLoad implements LoadView {
                     controller.switchMode();
                     break;
                 default:
-                    System.out.println("Invalid input.");
+                    System.out.println("Invalid Input.");
                     break;
             }
         }
     }
 
-    public void help()  {
-        System.out.println("Available Commands:\nConfirm - begins game with selected character.\nCancel - cancels selection.\nquit - exit the app.\ngui - switches to gui.\nhelp - what you're seeing right now.");
+    public void help() {
+        String message = "\nAvailable Commands:\nCONFIRM - Begin the game with the selected hero.\nCANCEL - Return to Main Menu.\nQUIT - Exit the app.\nGUI - Switches to gui.\nHELP - What you're seeing right now.";
+        System.out.println(message);
     }
 
     public void switchMode() {
@@ -128,14 +135,13 @@ public class consoleLoad implements LoadView {
     }
 
     public void cancel() {
-        System.out.println("Returning to main menu.");
+        System.out.println("\nReturning to Main Menu.");
         new consoleHome().setup();
     }
 
     public void quit() {
         System.out.println("Sayonara~");
         scanner.close();
-        //exit jframe?
         System.exit(0);
     }
 }

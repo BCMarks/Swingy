@@ -15,7 +15,7 @@ public class consoleHome implements HomeView {
     private static Scanner scanner;
 
     public consoleHome() {
-        System.out.println("CONSOLE HOME VIEW\n");
+        System.out.println("\nWelcome to Swingy!");
         db = App.getDatabase();
         controller = new HomeController(this);
         scanner = App.getScanner();
@@ -25,7 +25,7 @@ public class consoleHome implements HomeView {
         String input;
         boolean run = true;
         while(run) {
-            System.out.println("Input your command and press enter. (\"help\" for command list.)");
+            System.out.println("\nInput your command and press enter. (\"help\" for command list.)");
             try {
                 input = scanner.nextLine();
             }
@@ -83,7 +83,7 @@ public class consoleHome implements HomeView {
                     controller.switchMode();
                     break;
                 default:
-                    System.out.println("baka");
+                    System.out.println("Invalid Input.");
                     break;
             }
         }
@@ -93,8 +93,13 @@ public class consoleHome implements HomeView {
         new consoleArena().setup();
     }
     
-    public void help()  {
-        System.out.println("Available Commands:\nCreate - Begin a game with a new hero.\nLOAD - Continue with a previously saved hero..\nquit - exit the app.\ngui - switches to gui.\nhelp - what you're seeing right now.");
+    public void help() {
+        String arenaHelp = "";
+        if (db.isArenaUnlocked()) {
+            arenaHelp = "\nARENA - Simulate battles between heroes and villains.";
+        }
+        String message = "\nAvailable Commands:\nCREATE - Begin a game with a new hero.\nLOAD - Continue with a previously saved hero."+arenaHelp+"\nQUIT - Exit the app.\nGUI - Switches to gui.\nHELP - What you're seeing right now.";
+        System.out.println(message);
     }
 
     public void switchMode() {
@@ -112,7 +117,6 @@ public class consoleHome implements HomeView {
     public void quit() {
         System.out.println("Sayonara~");
         scanner.close();
-        //exit jframe?
         System.exit(0);
     }
 }

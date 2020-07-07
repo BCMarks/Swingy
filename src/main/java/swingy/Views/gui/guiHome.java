@@ -80,7 +80,6 @@ public class guiHome extends JPanel implements HomeView{
         this.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.gridwidth = GridBagConstraints.REMAINDER;
-        //gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.insets = new Insets(50, 50, 50, 50);
 
         this.menu.add(mode);
@@ -107,9 +106,12 @@ public class guiHome extends JPanel implements HomeView{
         window.revalidate();
     }
 
-    //Do proper help later
     public void help()  {
-        String message = "THIS IS THE HELP VIEW";
+        String arenaHelp = "";
+        if (db.isArenaUnlocked()) {
+            arenaHelp = "\nARENA - Simulate battles between heroes and villains.";
+        }
+        String message = "CREATE - Begin a game with a new hero.\nLOAD - Continue with a previously saved hero."+arenaHelp;
 
         JOptionPane.showMessageDialog(window, message, "Help", JOptionPane.INFORMATION_MESSAGE);
     }
@@ -148,7 +150,6 @@ public class guiHome extends JPanel implements HomeView{
     }
 
     public void quit() {
-        //close scanner and jframe?
         System.exit(0);
     }
 }

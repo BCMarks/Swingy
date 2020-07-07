@@ -15,7 +15,7 @@ public class consoleArena implements ArenaView {
     private static Scanner scanner;
 
     public consoleArena() {
-        System.out.println("CONSOLE ARENA VIEW\n");
+        System.out.println("\nEnter the Arena if you are Brave enough!");
         db = App.getDatabase();
         controller = new ArenaController(this);
         scanner = App.getScanner();
@@ -25,7 +25,7 @@ public class consoleArena implements ArenaView {
         String input;
         boolean run = true;
         while(run) {
-            System.out.println("Input your command and press enter. (\"help\" for command list.)");
+            System.out.println("\nInput your command and press enter. (\"help\" for command list.)");
             try {
                 input = scanner.nextLine();
             }
@@ -52,7 +52,7 @@ public class consoleArena implements ArenaView {
                     controller.switchMode();
                     break;
                 default:
-                    System.out.println("baka");
+                    System.out.println("Invalid Input.");
                     break;
             }
         }
@@ -61,14 +61,20 @@ public class consoleArena implements ArenaView {
     public void begin() {
         boolean run = true;
         String input;
+        String selection = "";
         while(run) {  
             int playerOne = 0;
             int playerTwo = 0;
-            System.out.println("Select the Attacker:");
             int choiceCount = displayChoices();
             while (playerOne == 0) {
+                System.out.println("\nSelect the Attacker:");
                 try {
-                    playerOne = Integer.parseInt(scanner.nextLine());
+                    try {
+                        selection = scanner.nextLine();
+                    } catch (Exception e) {
+                        quit();
+                    }
+                    playerOne = Integer.parseInt(selection);
                     if(playerOne < 1 || playerOne > choiceCount) {
                         playerOne = 0;
                         System.out.println("Invalid selection.");
@@ -77,11 +83,15 @@ public class consoleArena implements ArenaView {
                     System.out.println("Invalid selection.");
                 }
             }
-            System.out.println("Select the Defender:");
-            displayChoices();
             while (playerTwo == 0) {
+                System.out.println("\nSelect the Defender:");
                 try {
-                    playerTwo = Integer.parseInt(scanner.nextLine());
+                    try {
+                        selection = scanner.nextLine();
+                    } catch (Exception e) {
+                        quit();
+                    }
+                    playerTwo = Integer.parseInt(selection);
                     if(playerTwo < 1 || playerTwo > choiceCount) {
                         playerTwo = 0;
                         System.out.println("Invalid selection.");
@@ -107,7 +117,7 @@ public class consoleArena implements ArenaView {
                 }
             }
             
-            System.out.println("The Attacker wins "+playerOneWins+"% of the time.");
+            System.out.println("\nThe Attacker wins "+playerOneWins+"% of the time.");
 
             System.out.println("Simulate another battle? Y/N");
             try {
@@ -147,7 +157,7 @@ public class consoleArena implements ArenaView {
 
     private int displayChoices() {
         int i = 1;
-        System.out.println(i+": Ratticus the Giant Rat");
+        System.out.println("\n"+i+": Ratticus the Giant Rat");
         i++;
         System.out.println(i+": 2Spoopy4Me the Skeleton Soldier");
         i++;
@@ -166,7 +176,8 @@ public class consoleArena implements ArenaView {
     }
 
     public void help() {
-        System.out.println("Available Commands:\nCreate - Begin a game with a new hero.\nLOAD - Continue with a previously saved hero..\nquit - exit the app.\ngui - switches to gui.\nhelp - what you're seeing right now.");
+        String message = "\nAvailable Commands:\nENTER - Enter the glorious arena.\nHOME - Return to Main Menu.\nQUIT - Exit the app.\nGUI - Switches to gui.\nHELP - What you're seeing right now.";
+        System.out.println(message);
     }
 
     public void switchMode() {
@@ -176,7 +187,6 @@ public class consoleArena implements ArenaView {
     public void quit() {
         System.out.println("Sayonara~");
         scanner.close();
-        //exit jframe?
         System.exit(0);
     }
     

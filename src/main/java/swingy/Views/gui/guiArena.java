@@ -96,7 +96,6 @@ public class guiArena extends JPanel implements ArenaView {
         this.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.gridwidth = GridBagConstraints.REMAINDER;
-        //gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.insets = new Insets(10, 10, 10, 10);
 
         this.menu.add(mode);
@@ -108,7 +107,6 @@ public class guiArena extends JPanel implements ArenaView {
         simulate.setPreferredSize(buttonSize);
         simulate.setMinimumSize(buttonSize);
 
-        //heroList.setToolTipText("Select your hero.");
         Dimension panelSize = new Dimension(300, 400);
         firstList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         if (firstList.getSelectedIndex() == -1) {
@@ -181,9 +179,8 @@ public class guiArena extends JPanel implements ArenaView {
         new guiHome().setup();
     }
 
-    //Do proper help later
     public void help()  {
-        String message = "THIS IS THE HELP VIEW";
+        String message = "Select an Attacker (left) and a Defender (right) and simulate a battle between them.";
 
         JOptionPane.showMessageDialog(window, message, "Help", JOptionPane.INFORMATION_MESSAGE);
     }

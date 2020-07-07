@@ -20,7 +20,7 @@ public class consoleCreate implements CreateView {
         
 
     public consoleCreate() {
-        System.out.println("\nCONSOLE CREATE VIEW\n");
+        System.out.println("\nCreate New Hero!");
         controller = new CreateController(this);
         scanner = App.getScanner();
         db = App.getDatabase();
@@ -28,18 +28,19 @@ public class consoleCreate implements CreateView {
 
     public void setup() {
         String name = "";
+        String selection = "";
         int i = 0;
         int classCount = 4;
         if (db.isClassUnlocked()) {
             classCount = 5;
         }
         try {
-            System.out.println("What is your name, hero?");
+            System.out.println("\nWhat is your name, hero?");
             while (!controller.isValidHeroName(name)) {
                 name = scanner.nextLine();
                 nameCheck(name);
             }
-            System.out.println("Choose one of the following classes. [1-"+classCount+"]");
+            System.out.println("\nChoose one of the following classes. [1-"+classCount+"]");
             System.out.println("Option\tClass\t\t\t\tAttack\tDefense\tHit Points");
             System.out.println("1\t"+jobs[0]+"\t\t2\t5\t10");
             System.out.println("2\t"+jobs[1]+"\t\t5\t2\t10");
@@ -50,7 +51,12 @@ public class consoleCreate implements CreateView {
             }
             while (i == 0) {
                 try {
-                    i = Integer.parseInt(scanner.nextLine());
+                    try {
+                        selection = scanner.nextLine();
+                    } catch (Exception e) {
+                        quit();
+                    }
+                    i = Integer.parseInt(selection);
                     if(i < 1 || i > classCount) {
                         i = 0;
                         System.out.println("Invalid selection.");
@@ -95,7 +101,7 @@ public class consoleCreate implements CreateView {
         String input;
         boolean run = true;
         while (run) {
-            System.out.println("====================================");
+            System.out.println("\n====================================");
             System.out.println("Name: " + name);
             System.out.println("Class: " + jobs[index]);
             System.out.println("Level: 1");
@@ -126,7 +132,7 @@ public class consoleCreate implements CreateView {
                     break;
                 case "cancel":
                     run =  false;
-                    System.out.println("Hero retired before the quest even began...");
+                    System.out.println("\nHero retired before the quest even began...");
                     controller.cancel();
                     break;
                 case "gui":
@@ -134,14 +140,15 @@ public class consoleCreate implements CreateView {
                     controller.switchMode(name, index);
                     break;
                 default:
-                    System.out.println("Invalid input.");
+                    System.out.println("Invalid Input.");
                     break;
             }
         }
     }
 
-    public void help()  {
-        System.out.println("Available Commands:\nConfirm - begins game with selected character.\nCancel - cancels selection.\nquit - exit the app.\ngui - switches to gui.\nhelp - what you're seeing right now.");
+    public void help() {
+        String message = "\nAvailable Commands:\nCONFIRM - Begin the game with the newly created hero.\nCANCEL - Discard hero and return to Main Menu.\nQUIT - Exit the app.\nGUI - Switches to gui.\nHELP - What you're seeing right now.";
+        System.out.println(message);
     }
 
     public void switchMode(String name, int job) {
@@ -160,7 +167,6 @@ public class consoleCreate implements CreateView {
     public void quit() {
         System.out.println("Sayonara~");
         scanner.close();
-        //exit jframe?
         System.exit(0);
     }
 }
