@@ -5,13 +5,13 @@ import java.util.Scanner;
 import swingy.App;
 import swingy.Controllers.HomeController;
 import swingy.Models.Hero;
-import swingy.Utilities.DatabaseText;
+import swingy.Utilities.DatabaseHeroes;
 import swingy.Views.gui.guiHome;
 import swingy.Views.interfaces.HomeView;
 
 public class consoleHome implements HomeView {
     private static HomeController controller;
-    private static DatabaseText db;
+    private static DatabaseHeroes db;
     private static Scanner scanner;
 
     public consoleHome() {

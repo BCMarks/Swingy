@@ -21,14 +21,14 @@ import javax.swing.JTextField;
 import swingy.App;
 import swingy.Controllers.CreateController;
 import swingy.Models.Hero;
-import swingy.Utilities.DatabaseText;
+import swingy.Utilities.DatabaseHeroes;
 import swingy.Views.console.consoleCreate;
 import swingy.Views.interfaces.CreateView;
 
 public class guiCreate extends JPanel implements CreateView {
     private static JFrame window;
     private static CreateController controller;
-    private static DatabaseText db;
+    private static DatabaseHeroes db;
     private Hero hero;
 
     private String[] jobs = {"Big Swordfish Tank", "Big Villain Arsenal", "Healthy Lt Gabriel Cash Coder", "Losing Programmer", "Old Aries Lickable Cat"};

@@ -23,14 +23,14 @@ import swingy.Models.Hero;
 import swingy.Models.Map;
 import swingy.Models.Stats;
 import swingy.Models.Villain;
-import swingy.Utilities.DatabaseText;
+import swingy.Utilities.DatabaseHeroes;
 import swingy.Views.console.consoleGame;
 import swingy.Views.interfaces.GameView;
 
 public class guiGame extends JPanel implements GameView {
     private static JFrame window;
     private static GameController controller;
-    private static DatabaseText db;
+    private static DatabaseHeroes db;
     private Hero hero;
     private Map map;
     private ArrayList<Villain> villains;
@@ -335,7 +335,7 @@ public class guiGame extends JPanel implements GameView {
             "1: Access to the Arena.\n"+
             "2: The power of a new class shall be unlocked.\n"+
             "3: A fallen hero shall be granted life.\n"+
-            "4: An increase in your own power.";;
+            "4: An increase in your own power.";
         String[] options = {"1", "2", "3", "4"};
         int choice = JOptionPane.showOptionDialog(window, message, "Dragon Wish", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
         ArrayList<Hero> allHeroes = db.getAllHeroes();

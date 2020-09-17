@@ -1,7 +1,7 @@
 package swingy;
 
 import java.util.Scanner;
-import swingy.Utilities.DatabaseText;
+import swingy.Utilities.DatabaseHeroes;
 import javax.swing.*;
 
 import swingy.Views.console.consoleHome;
@@ -11,9 +11,10 @@ public class App
 {
     private static JFrame window;
     private static Scanner scanner;
-    private static DatabaseText db;
+    private static DatabaseHeroes db;
     public static void main(String[] args)
     {
+        java.util.logging.Logger.getLogger("org.hibernate").setLevel(java.util.logging.Level.WARNING);
         if (args.length != 1 || (!args[0].toLowerCase().equals("console") && !args[0].toLowerCase().equals("gui"))) {
             System.out.println("Usage: java -jar (console | gui)");
             System.exit(1);
@@ -41,21 +42,11 @@ public class App
         return scanner;
     }
 
-    public static DatabaseText getDatabase() {
+    public static DatabaseHeroes getDatabase() {
         if (db == null) {
-            db = new DatabaseText();
+            db = new DatabaseHeroes();
         }
         return db;
-    }
-
-    public static void switchToGUI() {
-        if (window != null)
-            window.setVisible(true);
-    }
-
-    public static void switchToConsole() {
-        if (window != null)
-            window.setVisible(false);
     }
 
     private static void game(String mode) {

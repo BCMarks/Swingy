@@ -5,13 +5,13 @@ import swingy.App;
 import swingy.Controllers.ArenaController;
 import swingy.Models.Hero;
 import swingy.Models.Villain;
-import swingy.Utilities.DatabaseText;
+import swingy.Utilities.DatabaseHeroes;
 import swingy.Views.gui.guiArena;
 import swingy.Views.interfaces.ArenaView;
 
 public class consoleArena implements ArenaView {
     private static ArenaController controller;
-    private static DatabaseText db;
+    private static DatabaseHeroes db;
     private static Scanner scanner;
 
     public consoleArena() {

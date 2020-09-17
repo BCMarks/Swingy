@@ -22,14 +22,14 @@ import javax.swing.ListSelectionModel;
 import swingy.App;
 import swingy.Controllers.LoadController;
 import swingy.Models.Hero;
-import swingy.Utilities.DatabaseText;
+import swingy.Utilities.DatabaseHeroes;
 import swingy.Views.console.consoleLoad;
 import swingy.Views.interfaces.LoadView;
 
 public class guiLoad extends JPanel implements LoadView {
     private static JFrame window;
     private static LoadController controller;
-    private static DatabaseText db;
+    private static DatabaseHeroes db;
 
     private ArrayList<Hero> heroes;
     private JList heroList;

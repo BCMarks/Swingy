@@ -6,14 +6,14 @@ import java.util.Scanner;
 import swingy.App;
 import swingy.Controllers.LoadController;
 import swingy.Models.Hero;
-import swingy.Utilities.DatabaseText;
+import swingy.Utilities.DatabaseHeroes;
 import swingy.Views.gui.guiLoad;
 import swingy.Views.interfaces.LoadView;
 
 public class consoleLoad implements LoadView {
     private static LoadController controller;
     private static Scanner scanner;
-    private static DatabaseText db;
+    private static DatabaseHeroes db;
     private Hero hero;
     private int index;
 

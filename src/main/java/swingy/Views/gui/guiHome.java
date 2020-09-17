@@ -14,14 +14,14 @@ import java.awt.*;
 
 import swingy.App;
 import swingy.Controllers.HomeController;
-import swingy.Utilities.DatabaseText;
+import swingy.Utilities.DatabaseHeroes;
 import swingy.Views.console.consoleHome;
 import swingy.Views.interfaces.HomeView;
 
 public class guiHome extends JPanel implements HomeView{
     private static JFrame window;
     private static HomeController controller;
-    private static DatabaseText db;
+    private static DatabaseHeroes db;
     
     private JButton create = new JButton("NEW HERO");
     private JButton load = new JButton("LOAD HERO");

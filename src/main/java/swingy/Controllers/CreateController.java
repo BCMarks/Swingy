@@ -2,12 +2,12 @@ package swingy.Controllers;
 
 import swingy.App;
 import swingy.Models.Hero;
-import swingy.Utilities.DatabaseText;
+import swingy.Utilities.DatabaseHeroes;
 import swingy.Views.interfaces.CreateView;
 
 public class CreateController {
     private CreateView view;
-    private static DatabaseText db;
+    private static DatabaseHeroes db;
 
     public CreateController(CreateView mode) {
         this.view = mode;

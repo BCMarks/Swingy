@@ -23,14 +23,14 @@ import swingy.App;
 import swingy.Controllers.ArenaController;
 import swingy.Models.Hero;
 import swingy.Models.Villain;
-import swingy.Utilities.DatabaseText;
+import swingy.Utilities.DatabaseHeroes;
 import swingy.Views.console.consoleArena;
 import swingy.Views.interfaces.ArenaView;
 
 public class guiArena extends JPanel implements ArenaView {
     private static JFrame window;
     private static ArenaController controller;
-    private static DatabaseText db;
+    private static DatabaseHeroes db;
     
     private ArrayList<Hero> heroes;
     private JList firstList;

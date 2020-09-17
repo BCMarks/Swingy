@@ -6,12 +6,14 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import swingy.Models.Hero;
 
-public class DatabaseText {
+public class DatabaseHeroes {
     private static File output = new File("heroes.txt");
     private ArrayList<Hero> heroList;
+    private HeroValidator heroValidator;
     
-    public DatabaseText() {
+    public DatabaseHeroes() {
         heroList = setupHeroList();
+        heroValidator = new HeroValidator();
     }
 
     public ArrayList<Hero> getAllHeroes() {
@@ -44,7 +46,7 @@ public class DatabaseText {
                 break;
             }
         }
-        if (isOriginalName) {
+        if (isOriginalName && heroValidator.isValidHero(hero)) {
             try {
                 FileWriter writer = new FileWriter("heroes.txt", true);
                 writer.write(
@@ -127,7 +129,7 @@ public class DatabaseText {
             scanner.close();
         }
         catch (Exception e) {
-            System.out.println("Database has been lost. Creating new database.");;
+            System.out.println("Hero database has been lost.");
         }
         return heroes;
     }

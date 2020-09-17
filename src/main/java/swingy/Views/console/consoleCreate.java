@@ -6,14 +6,14 @@ import swingy.App;
 import swingy.Controllers.CreateController;
 import swingy.Models.Hero;
 import swingy.Models.Stats;
-import swingy.Utilities.DatabaseText;
+import swingy.Utilities.DatabaseHeroes;
 import swingy.Views.gui.guiCreate;
 import swingy.Views.interfaces.CreateView;
 
 public class consoleCreate implements CreateView {
     private static CreateController controller;
     private static Scanner scanner;
-    private static DatabaseText db;
+    private static DatabaseHeroes db;
     private Hero hero;
     private String[] jobs = {"Big Swordfish Tank", "Big Villain Arsenal", "Healthy Lt Gabriel Cash Coder", "Losing Programmer", "Old Aries Lickable Cat"};
     private Stats[] baseStats = {new Stats(jobs[0], 1), new Stats(jobs[1], 1), new Stats(jobs[2], 1), new Stats(jobs[3], 1), new Stats(jobs[4], 1)};

@@ -6,14 +6,14 @@ import swingy.App;
 import swingy.Models.Hero;
 import swingy.Models.Map;
 import swingy.Models.Villain;
-import swingy.Utilities.DatabaseText;
+import swingy.Utilities.DatabaseHeroes;
 import swingy.Utilities.DatabaseVillains;
 import swingy.Views.interfaces.GameView;
 
 public class GameController {
     private GameView view;
     private static DatabaseVillains dbv;
-    private static DatabaseText db;
+    private static DatabaseHeroes db;
 
     public GameController(GameView mode) {
         this.view = mode;

@@ -81,7 +81,7 @@ public class DatabaseVillains {
             scanner.close();
         }
         catch (Exception e) {
-            System.out.println("Database has been lost. Creating new database.");;
+            System.out.println("Villain database has been lost. Creating new database.");
         }
         return villains;
     }

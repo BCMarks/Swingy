@@ -9,14 +9,14 @@ import swingy.Models.Hero;
 import swingy.Models.Map;
 import swingy.Models.Stats;
 import swingy.Models.Villain;
-import swingy.Utilities.DatabaseText;
+import swingy.Utilities.DatabaseHeroes;
 import swingy.Views.gui.guiGame;
 import swingy.Views.interfaces.GameView;
 
 public class consoleGame implements GameView {
     private static GameController controller;
     private static Scanner scanner;
-    private static DatabaseText db;
+    private static DatabaseHeroes db;
     private Hero hero;
     private Map map;
     private ArrayList<Villain> villains;

@@ -1,18 +1,14 @@
 package swingy.Controllers;
 
-import swingy.App;
 import swingy.Models.Hero;
 import swingy.Models.Villain;
-import swingy.Utilities.DatabaseText;
 import swingy.Views.interfaces.ArenaView;
 
 public class ArenaController {
     private ArenaView view;
-    private static DatabaseText db;
 
     public ArenaController(ArenaView mode) {
         this.view = mode;
-        db = App.getDatabase();
     }
 
     public void begin() {
