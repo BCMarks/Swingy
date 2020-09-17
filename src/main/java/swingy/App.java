@@ -16,7 +16,7 @@ public class App
     {
         java.util.logging.Logger.getLogger("org.hibernate").setLevel(java.util.logging.Level.WARNING);
         if (args.length != 1 || (!args[0].toLowerCase().equals("console") && !args[0].toLowerCase().equals("gui"))) {
-            System.out.println("Usage: java -jar (console | gui)");
+            System.out.println("Usage: java -jar swingy.jar (console | gui)");
             System.exit(1);
         }
         game(args[0]);
